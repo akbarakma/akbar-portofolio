@@ -1,3 +1,5 @@
+import '@fortawesome/fontawesome-svg-core/styles.css'
+import { config } from '@fortawesome/fontawesome-svg-core'
 import { Routes, Route } from "react-router-dom";
 
 import Homepage from "./pages/homepage";
@@ -6,11 +8,9 @@ import Projects from "./pages/projects";
 import Contact from "./pages/contact";
 import Notfound from "./pages/404";
 
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-config.autoAddCss = false
-
 import "./app.css";
+
+config.autoAddCss = false
 
 function App() {
 
