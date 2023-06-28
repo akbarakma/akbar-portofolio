@@ -9,7 +9,7 @@ const INFO = {
 	socials: {
 		github: "https://github.com/akbarakma",
 		linkedin: "https://www.linkedin.com/in/akbarakma",
-		cv: "https://github.com/akbarakma",
+		cv: "https://github.com/akbarakma/akbar-portofolio/blob/master/public/akbar-danial-akma-resume.pdf",
 	},
 
 	homepage: {
