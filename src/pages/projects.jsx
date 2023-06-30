@@ -36,18 +36,17 @@ const Projects = () => {
 					</div>
 					<div className="projects-container">
 						<div className="title projects-title">
-							Things I’ve made on my spare time while working fulltime.
+							Things I’ve made so far.
 						</div>
 
 						<div className="subtitle projects-subtitle" style={{ color: 'black' }}>
-						In my spare time while working full-time, 
-						I have embarked on a range of solo projects 
-						that I take great pride in. From developing an 
-						online Battleship game using React.js and TypeScript 
-						to various other diverse creations, these passion projects 
-						showcase my dedication and expertise. I welcome suggestions, 
-						feedback, or new ideas, so feel free to reach out to me and 
-						let's collaborate on exciting endeavors.
+						Here you will find a collection of projects I have worked on throughout my career, 
+						either independently or as part of a larger team. These projects highlight my ability 
+						to create from scratch and collaborate effectively. From solo ventures to group efforts, 
+						each project represents a significant milestone, showcasing my technical skills, 
+						adaptability, and passion for delivering exceptional solutions. 
+						Explore this section to witness the diverse range of projects I have undertaken, 
+						spanning various industries and technologies, and gain insights into my growth as a professional.
 						</div>
 
 						<div className="projects-list">

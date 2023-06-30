@@ -32,30 +32,57 @@ const INFO = {
 
 	projects: [
 		{
-			title: "BattleShip Online Game",
+			title: "Tannoi Mobile App (London, UK)",
 			description:
-				"I developed an online Battleship game using React.js and Socket.io. This project allows players to enjoy the classic board game experience in an online environment. Engage in PvP battles and test your strategic skills against opponents in real-time.",
+				"Developed the Backend on Tannoi, a social media app available on iOS and Android, enabling voice- based discussions and responses, from concept to deployment, building it entirely from scratch.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
-			link: "https://battleship-game.akbarakma.site",
+			link: null,
 		},
 
 		{
-			title: "Grow With KG Website",
+			title: "Grow With Kg Website (Jakarta, Indonesia)",
 			description:
 				"Collaborated with a company to create and deploy their website profile using Firebase and DigitalOcean, starting the project from scratch and implemented PostgreSQL as the backend database solution for the CMS admin endpoint",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
-			link: "https://growwithkg.id/",
+			link: "https://www.growwithkg.id",
 		},
 
 		{
-			title: "Simple BlackJack Game",
+			title: "Fourz Mobile Apps (London, UK)",
 			description:
-				"Made a simple blackjack game using HTML, CSS, and Javascript.",
+				"Developed the Backend on Fourz, an iOS app that allows users to create, share, and rank content in a unique four-image format, starting the project from scratch.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
 			linkText: "View Project",
-			link: "https://akbarakma.github.io/blackjack",
+			link: null,
+		},
+
+		{
+			title: "Wrga Mobile Apps (Jakarta, Indonesia)",
+			description:
+				"Led the Backend development of Wrga, an Android app that enables users to post, comment, and like content specific to their neighborhood, fostering a sense of community.",
+			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
+			linkText: "View Project",
+			link: null,
+		},
+
+		{
+			title: "Medilab Website (Jakarta, Indonesia)",
+			description:
+				"Collaborated with a company to develop and deploy a website specifically designed for registering COVID-19 patients and documenting their symptoms and Created a user-friendly CMS (Content Management System) for administrators and users to efficiently manage and register patient information.",
+			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
+			linkText: "View Project",
+			link: null,
+		},
+
+		{
+			title: "Akbar Danial Akma Portofolio Website (Jakarta, Indonesia)",
+			description:
+				"Created a ReactJS-based portfolio website that makes it easy for people to get to know me better. With a simple and user-friendly interface, visitors can explore my skills, experiences, and projects effortlessly. It's a convenient way to access information about me and delve into my portfolio.",
+			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
+			linkText: "View Project",
+			link: "https://www.akbarakma.site",
 		},
 	],
 };
