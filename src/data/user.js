@@ -82,7 +82,7 @@ const INFO = {
 				"Created a ReactJS-based portfolio website that makes it easy for people to get to know me better. With a simple and user-friendly interface, visitors can explore my skills, experiences, and projects effortlessly. It's a convenient way to access information about me and delve into my portfolio.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
 			linkText: "View Project",
-			link: "https://www.akbarakma.site",
+			link: "https://www.akbarakma.tech",
 		},
 	],
 };
