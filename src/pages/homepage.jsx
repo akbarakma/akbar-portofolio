@@ -108,6 +108,22 @@ const Homepage = () => {
 							</div>
 						</div>
 
+						<div className="social">
+							<a
+								href={INFO.socials.cv}
+								target="_blank"
+								rel="noreferrer"
+							>
+								<div className="social-icon">
+									<FontAwesomeIcon
+										icon={faFileLines}
+										className="social-icon"
+									/>
+								</div>
+								<div className="social-text" style={{ color: 'black' }}>Download my CV</div>
+							</a>
+						</div>
+
 						<div className="homepage-socials">
 							<a
 								href={INFO.socials.github}
