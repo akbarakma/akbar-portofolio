@@ -37,7 +37,7 @@ const Contact = () => {
 
 					<div className="contact-container">
 						<div className="title contact-title">
-							Let's Get in Touch: Ways to Connect with Me
+							Let's Get in Touch: <br /> Ways to Connect with Me
 						</div>
 
 						<div className="subtitle contact-subtitle" style={{ color: 'black' }}>
@@ -45,7 +45,7 @@ const Contact = () => {
 							me. I welcome your feedback, questions, and
 							suggestions. If you have a specific question or
 							comment, please feel free to email me directly at
-							&nbsp;{" "}
+							{" "}
 							<a href={`mailto:${INFO.main.email}`}>
 								{INFO.main.email}
 							</a>

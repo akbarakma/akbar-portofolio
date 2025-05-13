@@ -1,5 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
@@ -8,8 +11,10 @@ import Socials from "../components/about/socials";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
+import Experience from "../components/projects/experience";
 
 import "./styles/about.css";
+import "../components/about/styles/socials.css"
 
 const About = () => {
 
@@ -45,6 +50,22 @@ const About = () => {
 								<div className="subtitle about-subtitle" style={{ color: 'black' }}>
 									{INFO.about.description}
 								</div>
+
+								<div className="email" style={{ width: '50%' }}>
+									<div className="email-wrapper">
+										<a
+											href={`mailto:${INFO.main.email}`}
+											target="_blank"
+											rel="noreferrer"
+										>
+											<div className="social-icon">
+												<FontAwesomeIcon icon={faEnvelope} />
+											</div>
+
+											<div className="social-text" style={{ color: 'black' }}>{INFO.main.email}</div>
+										</a>
+									</div>
+								</div>
 							</div>
 
 							<div className="about-left-side">
@@ -59,13 +80,37 @@ const About = () => {
 								</div>
 
 								<div className="about-socials">
-									<Socials />
+									<Socials isNoEmail={true} />
 								</div>
 							</div>
 						</div>
-						<div className="about-socials-mobile">
-							<Socials />
-						</div>
+					</div>
+
+					<div style={{ textAlign: 'center', color: 'black', textDecoration: 'none', fontSize: '24px', fontWeight: 'bold' }}>
+							My Job Experience
+					</div>
+
+					<div className="all-projects-container">
+						{
+							INFO.jobExperience.map((project, index) => (
+								<div className="all-projects-project" key={index}>
+									<Experience
+										logo={project.logo}
+										title={project.title}
+										description={project.description}
+										linkText={project.linkText}
+										link={project.link}
+										years={project.years}
+										role={project.role}
+									/>
+								</div>
+							))
+						}
+					</div>
+					<div style={{ textAlign: 'center', marginTop: '20px' }}>
+						<Link to="/projects" style={{ color: 'orange', textDecoration: 'none', fontSize: '24px', fontWeight: 'bold' }}>
+							See The Projects I've Made So Far ...
+						</Link>
 					</div>
 					<div className="page-footer">
 						<Footer />

@@ -9,6 +9,7 @@ import Contact from "./pages/contact";
 import Notfound from "./pages/404";
 
 import "./app.css";
+import ScrollToTop from "./components/common/scrollToTop";
 
 config.autoAddCss = false
 
@@ -16,6 +17,7 @@ function App() {
 
 	return (
 		<div className="App">
+			<ScrollToTop />
 			<Routes>
 				<Route path="/" element={<Homepage />} />
 				<Route path="/about" element={<About />} />

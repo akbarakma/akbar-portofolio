@@ -18,6 +18,7 @@ import INFO from "../data/user";
 import SEO from "../data/seo";
 
 import "./styles/homepage.css";
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
 	const [stayLogo, setStayLogo] = useState(false);
@@ -167,8 +168,18 @@ const Homepage = () => {
 							</a>
 						</div>
 
+						<div style={{ textAlign: 'center', color: 'black', textDecoration: 'none', fontSize: '24px', fontWeight: 'bold', marginTop: '20px' }}>
+								My Projects Highlight
+						</div>
+
 						<div className="homepage-projects">
-							<AllProjects />
+							<AllProjects isFromHomepage={true} />
+						</div>
+
+						<div style={{ textAlign: 'center' }}>
+							<Link to="/about" style={{ color: 'orange', textDecoration: 'none', fontSize: '24px', fontWeight: 'bold' }}>
+								See More About Me and My Job Experience ...
+							</Link>
 						</div>
 
 						<div className="page-footer">

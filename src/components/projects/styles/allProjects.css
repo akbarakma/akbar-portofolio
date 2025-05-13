@@ -15,6 +15,28 @@
 	overflow: hidden;
 }
 
+.all-projects-container-single {
+	display: flex;
+	flex-direction: column;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin-left: -35px;
+	margin-right: -35px;
+}
+
+.all-projects-project-single {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px;
+	overflow: hidden;
+	margin: 2%;
+	border: 1px solid #ddd; /* thin light gray border */
+	border-radius: 8px;      /* optional: rounded corners */
+	padding: 20px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* optional: soft shadow */
+	background-color: #fff;  /* optional: background */
+}
+
 @media (max-width: 600px) {
 	.all-projects-project {
 		width: calc(100% / 2);

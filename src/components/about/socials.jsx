@@ -11,7 +11,8 @@ import INFO from "../../data/user";
 
 import "./styles/socials.css";
 
-const Socials = () => {
+const Socials = (props) => {
+	const { isNoEmail } = props;
 	return (
 		<div className="socials">
 
@@ -59,21 +60,24 @@ const Socials = () => {
 				</a>
 			</div>
 
-			<div className="email">
-				<div className="email-wrapper">
-					<a
-						href={`mailto:${INFO.main.email}`}
-						target="_blank"
-						rel="noreferrer"
-					>
-						<div className="social-icon">
-							<FontAwesomeIcon icon={faEnvelope} />
-						</div>
+			{
+				isNoEmail === true ? <></> :
+				<div className="email">
+					<div className="email-wrapper">
+						<a
+							href={`mailto:${INFO.main.email}`}
+							target="_blank"
+							rel="noreferrer"
+						>
+							<div className="social-icon">
+								<FontAwesomeIcon icon={faEnvelope} />
+							</div>
 
-						<div className="social-text" style={{ color: 'black' }}>{INFO.main.email}</div>
-					</a>
+							<div className="social-text" style={{ color: 'black' }}>{INFO.main.email}</div>
+						</a>
+					</div>
 				</div>
-			</div>
+			}
 		</div>
 	);
 };

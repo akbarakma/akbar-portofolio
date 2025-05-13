@@ -27,7 +27,11 @@
 }
 
 .project-logo {
-	width: 30px;
+	width: 120px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
 }
 
 .project-logo img {
@@ -41,6 +45,13 @@
 	padding-top: 15px;
 	margin-bottom: 1em;
 	font-weight: 700;
+}
+
+.project-company {
+	font-family: var(--secondary-font);
+	color: 'black';
+	font-size: 14px;
+	margin-bottom: 1em;
 }
 
 .project-description {

@@ -8,6 +8,7 @@ import AllProjects from "../components/projects/allProjects";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
+import { Link } from "react-router-dom";
 
 import "./styles/projects.css";
 
@@ -35,6 +36,10 @@ const Projects = () => {
 						</div>
 					</div>
 					<div className="projects-container">
+						<Link to="/contact" style={{ color: 'orange', textDecoration: 'none', fontSize: '24px', fontWeight: 'bold', marginBottom: '20px' }}>
+							Find Out Ways To Contact Me ...
+						</Link>
+
 						<div className="title projects-title">
 							Things I’ve made so far.
 						</div>
