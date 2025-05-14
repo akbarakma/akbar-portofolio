@@ -58,6 +58,15 @@ const INFO = {
 			link: 'https://www.growwithkg.id',
 		},
 
+		{
+			title: "Fourz Mobile Apps (London, UK)",
+			description:
+				"An iOS app for creating and ranking content in a unique four-image format. Built deep linking for smooth login and user flow, and added email communication functionality using Gmail Node Mailer to boost user engagement.",
+			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
+			linkText: "View Project",
+			link: null,
+		},
+
 	],
 
 	projects: [

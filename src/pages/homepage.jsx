@@ -24,6 +24,24 @@ const Homepage = () => {
 	const [stayLogo, setStayLogo] = useState(false);
 	const [logoSize, setLogoSize] = useState(80);
 	const [oldLogoSize, setOldLogoSize] = useState(80);
+	const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 600px)');
+
+    const handleChange = (e) => setIsMobile(e.matches);
+
+    // Set initial value
+    setIsMobile(mediaQuery.matches);
+
+    // Listen for changes
+    mediaQuery.addEventListener('change', handleChange);
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleChange);
+    };
+  }, []);
+	console.log(isMobile)
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -109,21 +127,6 @@ const Homepage = () => {
 							</div>
 						</div>
 
-						<div className="social">
-							<a
-								href={INFO.socials.cv}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<div className="social-icon">
-									<FontAwesomeIcon
-										icon={faFileLines}
-										className="social-icon"
-									/>
-								</div>
-								<div className="social-text" style={{ color: 'black' }}>Download my CV</div>
-							</a>
-						</div>
 
 						<div className="homepage-socials">
 							<a
@@ -173,7 +176,7 @@ const Homepage = () => {
 						</div>
 
 						<div className="homepage-projects">
-							<AllProjects isFromHomepage={true} />
+							<AllProjects isFromHomepage={true} isMobile={isMobile} />
 						</div>
 
 						<div style={{ textAlign: 'center' }}>

@@ -9,13 +9,18 @@ import INFO from "../../data/user";
 import "./styles/allProjects.css";
 
 const AllProjects = (props) => {
-	const { isFromHomepage } = props;
+	const { isFromHomepage, isMobile } = props;
+
+	let homepageProjects = INFO.homepageProjects;
+	if (!isMobile) {
+		homepageProjects = homepageProjects.slice(0,3);
+	}
 
 	return (
 		<div className="all-projects-container">
 			{
 			isFromHomepage === true ?
-			INFO.homepageProjects.map((project, index) => (
+			homepageProjects.map((project, index) => (
 				<div className="all-projects-project" key={index}>
 					<Project
 						logo={project.logo}
