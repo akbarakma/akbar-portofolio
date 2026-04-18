@@ -1,10 +1,6 @@
 import React, { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import { faFaceSadTear } from "@fortawesome/free-regular-svg-icons";
 
 import NavBar from "../components/common/navBar";
-import Logo from "../components/common/logo";
 
 import INFO from "../data/user";
 
@@ -20,25 +16,18 @@ const Notfound = () => {
 			<div className="not-found page-content">
 				<NavBar />
 				<div className="content-wrapper">
-					<div className="notfound-logo-container">
-						<div className="projects-logo">
-							<Logo width={46} />
-						</div>
-					</div>
 					<div className="notfound-container">
 						<div className="notfound-message">
-							<div className="notfound-title">
-								Oops! <FontAwesomeIcon icon={faFaceSadTear} />
-							</div>
+							<span className="notfound-eyebrow">Error · 404</span>
+							<h1 className="notfound-title">
+								Dead <em>end</em>.
+							</h1>
 							<div className="not-found-message">
-								We can't seem to find the page you're looking
-								for.
-								<br />
-								The requested URL "{window.location.href}" was
-								not found on this server.
+								The page at <span className="url-box">{window.location.pathname}</span> doesn't exist — probably never did. Sorry about that.
 							</div>
 							<a href="/" className="not-found-link">
-								Go back to the home page
+								<span>Back to <em>home</em></span>
+								<span className="arrow">→</span>
 							</a>
 						</div>
 					</div>

@@ -1,14 +1,20 @@
 :root {
-	/* ------- colors ------- */
-	--primary-color: #27272a;
-	--secondary-color: #65656d;
-	--tertiary-color: #acacb4;
-	--quaternary-color: #e4e4e7;
-	--link-color: #14b8a6;
-	/* ---------------------- */
+	--ink: #1a1613;
+	--paper: #f5f1ea;
+	--paper-deep: #ebe4d7;
+	--accent: #c8542b;
+	--accent-ink: #8d3a1d;
+	--muted: #6b635a;
+	--rule: rgba(26, 22, 19, 0.12);
+	--rule-strong: rgba(26, 22, 19, 0.22);
 
-	/* ------- fonts ------- */
-	--primary-font: "Heebo", sans-serif;
-	--secondary-font: "Roboto", sans-serif;
-	/* --------------------- */
+	--font-display: "Fraunces Variable", "Fraunces", Georgia, serif;
+	--font-body: "Newsreader", Georgia, "Times New Roman", serif;
+	--font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, Menlo, monospace;
+
+	--page-max: 1120px;
+	--gutter: clamp(20px, 5vw, 64px);
+
+	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+	--dur: 480ms;
 }

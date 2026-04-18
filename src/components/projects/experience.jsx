@@ -1,45 +1,40 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
 
 import "./styles/project.css";
+import "./styles/experience.css";
 
 const Experience = (props) => {
   const { title, description, link, logo, years, role } = props;
 
-  const imgSrc = `logo/${logo}`;
-
   return (
-    <React.Fragment>
-      <div className="project">
-        <div className="project-container">
-          <div className="project-logo">
-            <img src={imgSrc} alt="logo" />
+    <div className="experience-row">
+      <div className="experience-years">{years}</div>
+      <div className="experience-body">
+        <div className="experience-header">
+          {logo ? (
+            <div className="experience-logo">
+              <img src={`logo/${logo}`} alt={`${title} logo`} />
+            </div>
+          ) : null}
+          <div className="experience-header-text">
+            <div className="experience-role">{role}</div>
+            <h3 className="experience-company">{title}</h3>
           </div>
-          <div className="project-title" style={{ color: 'black', fontSize: '20px' }}>{title}</div>
-          <div className="project-company" style={{ color: 'black' }}>
-            {years}
-          </div>
-          <div className="project-company" style={{ color: 'black', fontWeight: 'bold' }}>
-            {role}
-          </div>
-          <div className="project-description" style={{ color: 'black' }}>{description}</div>
-          {
-            link !== null ? 
-            <Link to={link} target="_blank">
-              <div className="project-link">
-                <div className="project-link-icon">
-                  <FontAwesomeIcon icon={faLink} />
-                </div>
-
-                <div className="project-link-text">{link}</div>
-              </div>
-            </Link> : <></>
-          }
         </div>
+        <div className="experience-description">{description}</div>
+        {
+          link !== null ? (
+          <Link to={link} target="_blank" className="experience-link">
+            <span>Visit {new URL(link).hostname.replace("www.", "")}</span>
+            <FontAwesomeIcon icon={faArrowRight} />
+          </Link>
+          ) : null
+        }
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 

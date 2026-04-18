@@ -10,6 +10,13 @@ const NavBar = (props) => {
 		<React.Fragment>
 			<div className="nav-container">
 				<nav className="navbar">
+					<Link to="/" className="nav-wordmark" aria-label="Akbar Danial Akma — home">
+						<img
+							src="/logo.png"
+							alt="Akbar Danial Akma logo"
+							className="nav-wordmark-logo"
+						/>
+					</Link>
 					<div className="nav-background">
 						<ul className="nav-list">
 							<li

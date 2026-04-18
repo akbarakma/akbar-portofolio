@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import Project from "./project";
 import SingleProject from "./singleProject";
@@ -13,29 +12,30 @@ const AllProjects = (props) => {
 
 	let homepageProjects = INFO.homepageProjects;
 	if (!isMobile) {
-		homepageProjects = homepageProjects.slice(0,3);
+		homepageProjects = homepageProjects.slice(0, 3);
 	}
 
-	return (
-		<div className="all-projects-container">
-			{
-			isFromHomepage === true ?
-			homepageProjects.map((project, index) => (
-				<div className="all-projects-project" key={index}>
-					<Project
-						logo={project.logo}
-						title={project.title}
-						description={project.description}
-						linkText={project.linkText}
-						link={project.link}
-					/>
-				</div>
-			))
-			:
-			<>
+	return isFromHomepage === true ? (
+		<div className="highlights">
+			{homepageProjects.map((project, index) => (
+				<Project
+					key={index}
+					index={index + 1}
+					featured={index === 0}
+					logo={project.logo}
+					title={project.title}
+					description={project.description}
+					linkText={project.linkText}
+					link={project.link}
+				/>
+			))}
+		</div>
+	) : (
+		<div className="all-projects-container-single">
 			{INFO.projects.map((project, index) => (
 				<div className="all-projects-project-single" key={index}>
 					<SingleProject
+						index={index + 1}
 						logo={project.logo}
 						title={project.title}
 						description={project.description}
@@ -43,16 +43,10 @@ const AllProjects = (props) => {
 						link={project.link}
 						company={project.company}
 						skills={project.skills}
+						featured={index === 0}
 					/>
 				</div>
 			))}
-			<div style={{ textAlign: 'center', marginTop: '20px' }}>
-				<Link to="/about" style={{ color: 'orange', textDecoration: 'none', fontSize: '24px', fontWeight: 'bold' }}>
-					See More About Me and My Job Experience ...
-				</Link>
-			</div>
-			</>
-			}
 		</div>
 	);
 };

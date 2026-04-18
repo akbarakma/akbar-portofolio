@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 
-import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import { faMailBulk } from "@fortawesome/free-solid-svg-icons/faMailBulk";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faGithub,
-	faLinkedinIn,
-} from "@fortawesome/free-brands-svg-icons";
-import { faFileLines } from "@fortawesome/free-regular-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
+import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons/faLinkedinIn";
+import { faFileLines } from "@fortawesome/free-regular-svg-icons/faFileLines";
 
-import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
 import NavBar from "../components/common/navBar";
 import AllProjects from "../components/projects/allProjects";
+import CurrentlyLine from "../components/common/currentlyLine";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
@@ -20,174 +18,159 @@ import SEO from "../data/seo";
 import "./styles/homepage.css";
 import { Link } from "react-router-dom";
 
+const currentSEO = SEO.find((item) => item.page === "home");
+const seoKeywords = currentSEO.keywords.join(", ");
+
 const Homepage = () => {
-	const [stayLogo, setStayLogo] = useState(false);
-	const [logoSize, setLogoSize] = useState(80);
-	const [oldLogoSize, setOldLogoSize] = useState(80);
 	const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 600px)');
-
-    const handleChange = (e) => setIsMobile(e.matches);
-
-    // Set initial value
-    setIsMobile(mediaQuery.matches);
-
-    // Listen for changes
-    mediaQuery.addEventListener('change', handleChange);
-
-    return () => {
-      mediaQuery.removeEventListener('change', handleChange);
-    };
-  }, []);
-	console.log(isMobile)
-
 	useEffect(() => {
-		const handleScroll = () => {
-			let scroll = Math.round(window.pageYOffset, 2);
+		const mediaQuery = window.matchMedia('(max-width: 600px)');
 
-			let newLogoSize = 80 - (scroll * 4) / 10;
+		const handleChange = (e) => setIsMobile(e.matches);
 
-			if (newLogoSize < oldLogoSize) {
-				if (newLogoSize > 40) {
-					setLogoSize(newLogoSize);
-					setOldLogoSize(newLogoSize);
-					setStayLogo(false);
-				} else {
-					setStayLogo(true);
-				}
-			} else {
-				setLogoSize(newLogoSize);
-				setStayLogo(false);
-			}
+		setIsMobile(mediaQuery.matches);
+
+		mediaQuery.addEventListener('change', handleChange);
+
+		return () => {
+			mediaQuery.removeEventListener('change', handleChange);
 		};
-
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, [logoSize, oldLogoSize]);
-
-	const currentSEO = SEO.find((item) => item.page === "home");
-
-	const logoStyle = {
-		display: "flex",
-		position: stayLogo ? "fixed" : "relative",
-		top: stayLogo ? "3vh" : "auto",
-		zIndex: 999,
-		// border: stayLogo ? "1px solid white" : "none",
-		// borderRadius: stayLogo ? "50%" : "none",
-		// boxShadow: stayLogo ? "0px 4px 10px rgba(0, 0, 0, 0.25)" : "none",
-	};
+	}, []);
 
 	return (
 		<React.Fragment>
 			<Helmet>
 				<title>{INFO.main.title}</title>
 				<meta name="description" content={currentSEO.description} />
-				<meta
-					name="keywords"
-					content={currentSEO.keywords.join(", ")}
-				/>
+				<meta name="keywords" content={seoKeywords} />
 			</Helmet>
 
 			<div className="page-content">
 				<NavBar active="home" />
 				<div className="content-wrapper">
-					<div className="homepage-logo-container">
-						<div style={logoStyle}>
-							<Logo width={logoSize} link={false} />
+					<section className="homepage-hero stagger">
+						<div className="homepage-hero-left">
+							<span className="homepage-eyebrow">Fullstack Engineer · 5+ yrs</span>
+							<h1 className="homepage-display">
+								Akbar <em>Danial</em> Akma.
+							</h1>
+							<CurrentlyLine items={INFO.homepage.currentlyItems} />
+							<p className="homepage-lede">
+								{INFO.homepage.description}
+							</p>
 						</div>
-						<div className="title homepage-title">
-							<p style={{ color: 'orange', marginLeft: 30 }}>Akbar Danial Akma</p>
+						<div className="homepage-hero-right">
+							<div className="homepage-portrait">
+								<img
+									src="homepage.jpg"
+									alt="Portrait of Akbar Danial Akma"
+								/>
+								<span className="homepage-portrait-tag">Jakarta · open to work</span>
+							</div>
 						</div>
+					</section>
+
+					<div className="homepage-socials">
+						<span className="homepage-socials-label">Elsewhere</span>
+						<a
+							href={INFO.socials.github}
+							target="_blank"
+							rel="noreferrer"
+							aria-label="GitHub"
+						>
+							<FontAwesomeIcon
+								icon={faGithub}
+								className="homepage-social-icon"
+							/>
+						</a>
+						<a
+							href={INFO.socials.linkedin}
+							target="_blank"
+							rel="noreferrer"
+							aria-label="LinkedIn"
+						>
+							<FontAwesomeIcon
+								icon={faLinkedinIn}
+								className="homepage-social-icon"
+							/>
+						</a>
+						<a
+							href={INFO.socials.cv}
+							target="_blank"
+							rel="noreferrer"
+							aria-label="Resume"
+						>
+							<FontAwesomeIcon
+								icon={faFileLines}
+								className="homepage-social-icon"
+							/>
+						</a>
+						<a
+							href={`mailto:${INFO.main.email}`}
+							target="_blank"
+							rel="noreferrer"
+							aria-label="Email"
+						>
+							<FontAwesomeIcon
+								icon={faMailBulk}
+								className="homepage-social-icon"
+							/>
+						</a>
 					</div>
 
-					<div className="homepage-container">
-						<div className="homepage-first-area">
-							<div className="homepage-first-area-left-side">
-								<div className="title homepage-title">
-									{INFO.homepage.title}
-								</div>
-
-								<div className="subtitle homepage-subtitle" style={{ color: 'black' }}>
-									{INFO.homepage.description}
-								</div>
+					<section className="ai-lab" aria-label="AI lab — what I'm building with">
+						<div className="ai-lab-meta">
+							<span className="ai-lab-eyebrow">
+								<span className="ai-lab-pulse" aria-hidden="true" />
+								Now · AI Lab
+							</span>
+							<h2 className="ai-lab-title">
+								Pulled into <em>AI agents</em>.
+							</h2>
+							<p className="ai-lab-body">
+								Outside of work, most of my time goes here — wrangling coding agents,
+								running open-source models locally, and learning how each LLM breaks
+								differently.
+							</p>
+						</div>
+						<div className="ai-lab-tracks">
+							<div className="ai-lab-track">
+								<span className="ai-lab-track-label">Agents</span>
+								<ul className="ai-lab-track-list">
+									<li>Claude</li>
+									<li>Codex</li>
+									<li>OpenCode</li>
+								</ul>
 							</div>
-
-							<div className="homepage-first-area-right-side">
-								<div className="homepage-image-container">
-									<div className="homepage-image-wrapper">
-										<img
-											src="homepage.jpg"
-											alt="about"
-											className="homepage-image"
-										/>
-									</div>
-								</div>
+							<div className="ai-lab-track">
+								<span className="ai-lab-track-label">Local · OSS</span>
+								<ul className="ai-lab-track-list">
+									<li>Ollama</li>
+									<li>Llama · Mistral · Qwen</li>
+								</ul>
 							</div>
 						</div>
+					</section>
 
+					<div className="homepage-section-label">
+						<h2>Project <em>highlights</em></h2>
+						<span className="mono-count">selected work</span>
+					</div>
 
-						<div className="homepage-socials">
-							<a
-								href={INFO.socials.github}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faGithub}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={INFO.socials.linkedin}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faLinkedinIn}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={INFO.socials.cv}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faFileLines}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={`mailto:${INFO.main.email}`}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faMailBulk}
-									className="homepage-social-icon"
-								/>
-							</a>
-						</div>
+					<div className="homepage-projects">
+						<AllProjects isFromHomepage={true} isMobile={isMobile} />
+					</div>
 
-						<div style={{ textAlign: 'center', color: 'black', textDecoration: 'none', fontSize: '24px', fontWeight: 'bold', marginTop: '20px' }}>
-								My Projects Highlight
-						</div>
+					<div className="homepage-cta-row">
+						<Link to="/about" className="homepage-cta-link">
+							<span>More <em>about me</em> &amp; where I've worked</span>
+							<span className="arrow">→</span>
+						</Link>
+					</div>
 
-						<div className="homepage-projects">
-							<AllProjects isFromHomepage={true} isMobile={isMobile} />
-						</div>
-
-						<div style={{ textAlign: 'center' }}>
-							<Link to="/about" style={{ color: 'orange', textDecoration: 'none', fontSize: '24px', fontWeight: 'bold' }}>
-								See More About Me and My Job Experience ...
-							</Link>
-						</div>
-
-						<div className="page-footer">
-							<Footer />
-						</div>
+					<div className="page-footer">
+						<Footer />
 					</div>
 				</div>
 			</div>

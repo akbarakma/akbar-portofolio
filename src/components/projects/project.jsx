@@ -1,37 +1,51 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
 
 import "./styles/project.css";
 
 const Project = (props) => {
-	const { title, description, link } = props;
+	const { title, description, link, index, featured } = props;
 
-	return (
-		<React.Fragment>
-			<div className="project">
-				<div className="project-container">
-					{/* <div className="project-logo">
-						<img src={logo} alt="logo" />
-					</div> */}
-					<div className="project-title" style={{ color: 'black' }}>{title}</div>
-					<div className="project-description" style={{ color: 'black' }}>{description}</div>
-					{
-						link !== null ? 
-						<Link to={link} target="_blank">
-							<div className="project-link">
-								<div className="project-link-icon">
-									<FontAwesomeIcon icon={faLink} />
-								</div>
+	const indexLabel = index ? `0${index}`.slice(-2) : "01";
 
-								<div className="project-link-text">{link}</div>
-							</div>
-						</Link> : <></>
-					}
-				</div>
+	const titleParts = title.match(/^(.*?)\s*\(([^)]+)\)\s*$/);
+	const cleanTitle = titleParts ? titleParts[1] : title;
+	const location = titleParts ? titleParts[2] : null;
+
+	const linkContent =
+		link !== null ? (
+			<span className="highlight-link">
+				<span>Visit project</span>
+				<FontAwesomeIcon icon={faArrowRight} />
+			</span>
+		) : (
+			<span className="highlight-link highlight-link-private">
+				<span>Private engagement</span>
+			</span>
+		);
+
+	const inner = (
+		<div className={`highlight ${featured ? "highlight-featured" : "highlight-tile"}`}>
+			<div className="highlight-rail">
+				<span className="highlight-index">{indexLabel}</span>
+				{location ? <span className="highlight-location">{location}</span> : null}
 			</div>
-		</React.Fragment>
+			<div className="highlight-body">
+				<h3 className="highlight-title">{cleanTitle}</h3>
+				<p className="highlight-description">{description}</p>
+				{linkContent}
+			</div>
+		</div>
+	);
+
+	return link !== null ? (
+		<Link to={link} target="_blank" className="highlight-anchor">
+			{inner}
+		</Link>
+	) : (
+		<div className="highlight-anchor highlight-anchor-static">{inner}</div>
 	);
 };
 

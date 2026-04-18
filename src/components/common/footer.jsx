@@ -28,8 +28,8 @@ const Footer = () => {
 				</div>
 
 				<div className="footer-credits">
-					<div className="footer-credits-text" style={{ color: 'black' }}>
-						© 2023 Akbar Akma. All Rights Reserved.
+					<div className="footer-credits-text">
+						© {new Date().getFullYear()} Akbar Danial Akma · built with care
 					</div>
 				</div>
 			</div>

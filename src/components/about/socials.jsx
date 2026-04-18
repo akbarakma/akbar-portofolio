@@ -1,11 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import {
-	faGithub,
-	faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
-import { faFileLines } from "@fortawesome/free-regular-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
+import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
+import { faFileLines } from "@fortawesome/free-regular-svg-icons/faFileLines";
 
 import INFO from "../../data/user";
 
@@ -61,7 +59,7 @@ const Socials = (props) => {
 			</div>
 
 			{
-				isNoEmail === true ? <></> :
+				isNoEmail === true ? null : (
 				<div className="email">
 					<div className="email-wrapper">
 						<a
@@ -77,6 +75,7 @@ const Socials = (props) => {
 						</a>
 					</div>
 				</div>
+				)
 			}
 		</div>
 	);

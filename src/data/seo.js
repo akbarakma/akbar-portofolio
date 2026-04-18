@@ -2,36 +2,29 @@ const SEO = [
 	{
 		page: "home",
 		description:
-			"My name is Akbar Danial Akma. I am a backend developer with expertise in Node.js and Typescript. I have experience in building applications from scratch and collaborating with larger teams. Passionate about delivering efficient and scalable solutions, Committed to continuous growth, I consistently achieve impactful results.",
-		keywords: ["Akbar", "Akbar A", "Akbar Akma", "akbar", 'akma', 'portofolio', 'danial'],
+			"Akbar Danial Akma — Fullstack Engineer with 5+ years of building complex applications across logistics, e-commerce, and social platforms. Backend-leaning (TypeScript, Go, Node.js) and currently exploring AI agents.",
+		keywords: ["Akbar Danial Akma", "Akbar Akma", "Fullstack Engineer", "Backend Engineer", "TypeScript", "Golang", "Node.js", "AI agents", "portfolio"],
 	},
 
 	{
 		page: "about",
 		description:
-			"My name is Akbar Danial Akma. I am a backend developer with expertise in Node.js and Typescript. I have experience in building applications from scratch and collaborating with larger teams. Passionate about delivering efficient and scalable solutions, Committed to continuous growth, I consistently achieve impactful results.",
-		keywords: ["Akbar", "Akbar A", "Akbar Akma", "akbar", 'akma', 'portofolio', 'danial'],
-	},
-
-	{
-		page: "articles",
-		description:
-			"Chronological collection of my long-form thoughts on programming, leadership, product design, and more.",
-		keywords: ["Akbar", "Akbar A", "Akbar Akma", "akbar", 'akma', 'portofolio', 'danial'],
+			"The story behind Akbar Danial Akma — a Fullstack Engineer shipping software for teams in Jakarta, Singapore, and London, and lately building with LLMs and AI agents.",
+		keywords: ["Akbar Danial Akma", "Akbar Akma", "about", "Fullstack Engineer", "Backend Engineer", "AI agents", "experience"],
 	},
 
 	{
 		page: "projects",
 		description:
-			"I've worked on a variety of projects over the years and I'm proud of the progress I've made.",
-		keywords: ["Akbar", "Akbar A", "Akbar Akma", "akbar", 'akma', 'portofolio', 'danial'],
+			"Selected projects by Akbar Danial Akma — logistics systems at scale, marketplace integrations, voice-based social apps, and more.",
+		keywords: ["Akbar Danial Akma", "Akbar Akma", "projects", "portfolio", "TypeScript", "Golang", "React", "Node.js"],
 	},
 
 	{
 		page: "contact",
 		description:
-			"If you're interested in collaborating on a project, feel free to reach out to me. I'm always open to new ideas and opportunities.",
-		keywords: ["Akbar", "Akbar A", "Akbar Akma", "akbar", 'akma', 'portofolio', 'danial'],
+			"Get in touch with Akbar Danial Akma — open to interesting work, collaborations, and a good tech conversation.",
+		keywords: ["Akbar Danial Akma", "Akbar Akma", "contact", "hire", "email"],
 	},
 ];
 
