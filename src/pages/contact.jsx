@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
 import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons/faWhatsapp";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons/faFileLines";
 
 import NavBar from "../components/common/navBar";
@@ -21,6 +22,7 @@ const CHANNELS = [
 	{ key: "email", icon: faEnvelope, label: "Email", href: `mailto:${INFO.main.email}` },
 	{ key: "github", icon: faGithub, label: "GitHub", href: INFO.socials.github },
 	{ key: "linkedin", icon: faLinkedin, label: "LinkedIn", href: INFO.socials.linkedin },
+	{ key: "whatsapp", icon: faWhatsapp, label: "WhatsApp", href: "https://wa.me/6281388893502" },
 	{ key: "resume", icon: faFileLines, label: "Resume", href: INFO.socials.cv },
 ];
 
