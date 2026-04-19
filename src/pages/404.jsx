@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 import NavBar from "../components/common/navBar";
 
@@ -13,6 +14,10 @@ const Notfound = () => {
 
 	return (
 		<React.Fragment>
+			<Helmet>
+				<title>{`404 | ${INFO.main.title}`}</title>
+				<meta name="robots" content="noindex, follow" />
+			</Helmet>
 			<div className="not-found page-content">
 				<NavBar />
 				<div className="content-wrapper">

@@ -25,6 +25,35 @@ const About = () => {
 				<title>{`About | ${INFO.main.title}`}</title>
 				<meta name="description" content={currentSEO.description} />
 				<meta name="keywords" content={seoKeywords} />
+				<link rel="canonical" href="https://www.akbarakma.tech/about" />
+				<meta property="og:title" content={`About | ${INFO.main.title}`} />
+				<meta property="og:description" content={currentSEO.description} />
+				<meta property="og:url" content="https://www.akbarakma.tech/about" />
+				<meta property="og:type" content="profile" />
+				<meta property="og:image" content="https://www.akbarakma.tech/about.jpg" />
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta name="twitter:title" content={`About | ${INFO.main.title}`} />
+				<meta name="twitter:description" content={currentSEO.description} />
+				<meta name="twitter:image" content="https://www.akbarakma.tech/about.jpg" />
+				<script type="application/ld+json">{`
+					{
+						"@context": "https://schema.org",
+						"@type": "ProfilePage",
+						"mainEntity": {
+							"@type": "Person",
+							"name": "Akbar Danial Akma",
+							"alternateName": "Akbar Akma",
+							"url": "https://www.akbarakma.tech/about",
+							"image": "https://www.akbarakma.tech/about.jpg",
+							"jobTitle": "Fullstack Engineer",
+							"description": "${INFO.about.description.replace(/"/g, '\\"')}",
+							"sameAs": [
+								"https://github.com/akbarakma",
+								"https://www.linkedin.com/in/akbarakma"
+							]
+						}
+					}
+				`}</script>
 			</Helmet>
 
 			<div className="page-content">

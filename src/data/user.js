@@ -15,7 +15,7 @@ const INFO = {
 	homepage: {
 		title: "Fullstack Engineer",
 		description:
-			"Hey, I'm Akbar — a Fullstack Engineer with 5+ years of building complex applications. I live closest to the backend (TypeScript, Go, Node.js), but I'm happy anywhere in the stack. I've shipped logistics platforms that absorb millions of requests on event days, marketplace integrations, and mobile apps used in Jakarta, Singapore, and London. Lately I've been pulled into the AI scene — building with LLMs and AI agents to see how far they can push the products I work on.",
+			"Hey, I'm Akbar — a Fullstack Engineer with 5+ years of building complex applications end-to-end. I'm comfortable across the stack (TypeScript, Go, Python, Node.js, React), shipping everything from APIs and data layers to the interfaces sitting on top of them. I've delivered logistics platforms that absorb millions of requests on event days, marketplace integrations, and mobile apps used in Jakarta, Singapore, and London. Lately I've been pulled into the AI scene — building with LLMs and AI agents to see how far they can push the products I work on.",
 		currentlyItems: [
 			"wrangling AI agents.",
 			"scaling logistics at millions of requests.",
@@ -26,7 +26,7 @@ const INFO = {
 	about: {
 		title: "About Me and My Job Experience",
 		description:
-			"Hey, thanks for stopping by. I'm Akbar — a Fullstack Engineer with 5+ years of experience, most at home on the backend but comfortable anywhere the work takes me. Over the years I've shipped software with small teams in London and with larger companies in Jakarta and Singapore: voice-based social apps, marketplace integrations, and logistics systems that stay up when traffic surges past a million requests on event days. I care about writing code that's clean enough to hand off and reliable enough to stop worrying about. I'm curious by default — most recently that curiosity has pulled me into AI agents, and I've been building small experiments to see how they reshape the way we build products. If any of that sounds interesting, the roles that got me here are below, and the Projects section has the full list of what I've built.",
+			"Hey, thanks for stopping by. I'm Akbar — a Fullstack Engineer with 5+ years of experience, equally at home shipping APIs, data layers, and the UIs that sit on top of them. Over the years I've built software with small teams in London and with larger companies in Jakarta and Singapore: voice-based social apps, marketplace integrations, and logistics systems that stay up when traffic surges past a million requests on event days. I care about writing code that's clean enough to hand off and reliable enough to stop worrying about. I'm curious by default — most recently that curiosity has pulled me into AI agents, and I've been building small experiments to see how they reshape the way we build products. If any of that sounds interesting, the roles that got me here are below, and the Projects section has the full list of what I've built.",
 	},
 
 	homepageProjects: [
@@ -188,7 +188,7 @@ const INFO = {
 			logo: "sicepat_ekspres_indonesia_logo.jpeg",
 			linkText: "View Project",
 			link: "https://www.sicepat.com",
-			years: '2022 - 2025',
+			years: '2022 - 2026',
 			role: 'Senior Software Engineer'
 		},
 

@@ -64,6 +64,18 @@ const NavBar = (props) => {
 							>
 								<Link to="/contact">Contact</Link>
 							</li>
+							<li className="nav-item nav-playground">
+								<a
+									href="https://playground.akbarakma.tech"
+									target="_blank"
+									rel="noreferrer"
+									aria-label="Visit my playground — solo projects, live"
+								>
+									<span className="nav-playground-dot" aria-hidden="true" />
+									<span className="nav-playground-label">playground</span>
+									<span className="nav-playground-arrow" aria-hidden="true">↗</span>
+								</a>
+							</li>
 						</ul>
 					</div>
 				</nav>

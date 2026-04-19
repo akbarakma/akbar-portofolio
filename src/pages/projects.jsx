@@ -21,6 +21,16 @@ const Projects = () => {
 				<title>{`Projects | ${INFO.main.title}`}</title>
 				<meta name="description" content={currentSEO.description} />
 				<meta name="keywords" content={seoKeywords} />
+				<link rel="canonical" href="https://www.akbarakma.tech/projects" />
+				<meta property="og:title" content={`Projects | ${INFO.main.title}`} />
+				<meta property="og:description" content={currentSEO.description} />
+				<meta property="og:url" content="https://www.akbarakma.tech/projects" />
+				<meta property="og:type" content="website" />
+				<meta property="og:image" content="https://www.akbarakma.tech/homepage.jpg" />
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta name="twitter:title" content={`Projects | ${INFO.main.title}`} />
+				<meta name="twitter:description" content={currentSEO.description} />
+				<meta name="twitter:image" content="https://www.akbarakma.tech/homepage.jpg" />
 			</Helmet>
 
 			<div className="page-content">
