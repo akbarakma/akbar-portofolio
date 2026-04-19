@@ -237,9 +237,9 @@
 }
 
 @keyframes ai-pulse {
-	0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 85%, transparent); }
-	70% { box-shadow: 0 0 0 14px color-mix(in srgb, var(--accent) 0%, transparent); }
-	100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 0%, transparent); }
+	0% { box-shadow: 0 0 0 0 rgb(from var(--accent) r g b / 0.85); }
+	70% { box-shadow: 0 0 0 14px rgb(from var(--accent) r g b / 0); }
+	100% { box-shadow: 0 0 0 0 rgb(from var(--accent) r g b / 0); }
 }
 
 .ai-lab-title {
