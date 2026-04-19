@@ -18,6 +18,7 @@ const INFO = {
 			"Hey, I'm Akbar — a Fullstack Engineer with 5+ years of building complex applications end-to-end. I'm comfortable across the stack (TypeScript, Go, Python, Node.js, React), shipping everything from APIs and data layers to the interfaces sitting on top of them. I've delivered logistics platforms that absorb millions of requests on event days, marketplace integrations, and mobile apps used in Jakarta, Singapore, and London. Lately I've been pulled into the AI scene — building with LLMs and AI agents to see how far they can push the products I work on.",
 		currentlyItems: [
 			"wrangling AI agents.",
+			"working on my playground.",
 			"scaling logistics at millions of requests.",
 			"yes, I still use Vim.",
 		],

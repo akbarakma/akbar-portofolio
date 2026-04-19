@@ -91,22 +91,25 @@
 }
 
 .nav-playground a {
+	position: relative;
 	display: inline-flex;
 	align-items: center;
 	gap: 8px;
 	padding: 6px 12px;
-	border: 1px solid var(--rule-strong);
+	border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--rule-strong));
 	border-radius: 999px;
-	background: color-mix(in srgb, var(--paper) 70%, transparent);
+	background: color-mix(in srgb, var(--accent) 6%, var(--paper));
 	color: var(--ink);
-	transition: border-color 240ms var(--ease-out), color 240ms var(--ease-out), background 240ms var(--ease-out), transform 240ms var(--ease-out);
+	box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
+	transition: border-color 240ms var(--ease-out), color 240ms var(--ease-out), background 240ms var(--ease-out), transform 240ms var(--ease-out), box-shadow 240ms var(--ease-out);
 }
 
 .nav-playground a:hover {
 	color: var(--accent-ink);
 	border-color: var(--accent);
-	background: color-mix(in srgb, var(--accent) 10%, transparent);
+	background: color-mix(in srgb, var(--accent) 14%, var(--paper));
 	transform: translateY(-1px);
+	box-shadow: 0 6px 18px -10px color-mix(in srgb, var(--accent) 70%, transparent);
 }
 
 .nav-playground-dot {

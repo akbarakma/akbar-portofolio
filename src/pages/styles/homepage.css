@@ -236,18 +236,9 @@
 	margin-bottom: 16px;
 }
 
-.ai-lab-pulse {
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background: var(--accent);
-	box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent);
-	animation: ai-pulse 1800ms var(--ease-out) infinite;
-}
-
 @keyframes ai-pulse {
-	0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 50%, transparent); }
-	70% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 0%, transparent); }
+	0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 85%, transparent); }
+	70% { box-shadow: 0 0 0 14px color-mix(in srgb, var(--accent) 0%, transparent); }
 	100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 0%, transparent); }
 }
 
@@ -372,6 +363,7 @@
 	background: var(--accent);
 	box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent);
 	animation: ai-pulse 1800ms var(--ease-out) infinite;
+	flex-shrink: 0;
 }
 
 .playground-title {

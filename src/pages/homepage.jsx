@@ -133,8 +133,7 @@ const Homepage = () => {
 						<section className="ai-lab" aria-label="AI lab — what I'm building with">
 							<div className="ai-lab-meta">
 								<span className="ai-lab-eyebrow">
-									<span className="ai-lab-pulse" aria-hidden="true" />
-									Now · AI Lab
+									AI Lab
 								</span>
 								<h2 className="ai-lab-title">
 									Pulled into <em>AI agents</em>.
