@@ -19,8 +19,8 @@ const INFO = {
 		currentlyItems: [
 			"wrangling AI agents.",
 			"working on my playground.",
-			"scaling logistics at millions of requests.",
-			"yes, I still use Vim.",
+			"brewing a coffee.",
+			"yes, I still use StackOverflow.",
 		],
 	},
 
