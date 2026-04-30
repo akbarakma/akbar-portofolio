@@ -7,6 +7,7 @@
 	--muted: #6b635a;
 	--rule: rgba(26, 22, 19, 0.12);
 	--rule-strong: rgba(26, 22, 19, 0.22);
+	--shadow-rgb: 26, 22, 19;
 
 	--font-display: "Fraunces Variable", "Fraunces", Georgia, serif;
 	--font-body: "Newsreader", Georgia, "Times New Roman", serif;
@@ -17,4 +18,20 @@
 
 	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 	--dur: 480ms;
+
+	color-scheme: light;
+}
+
+[data-theme="dark"] {
+	--ink: #f0ebe2;
+	--paper: #1a1613;
+	--paper-deep: #221d18;
+	--accent: #e07043;
+	--accent-ink: #f08c5e;
+	--muted: #a39a8e;
+	--rule: rgba(245, 241, 234, 0.12);
+	--rule-strong: rgba(245, 241, 234, 0.22);
+	--shadow-rgb: 0, 0, 0;
+
+	color-scheme: dark;
 }

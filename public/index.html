@@ -5,6 +5,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#1a1613" />
 
+		<script>
+			(function () {
+				try {
+					var t = localStorage.getItem("theme");
+					if (t === "dark") {
+						document.documentElement.setAttribute("data-theme", "dark");
+					}
+				} catch (e) {}
+			})();
+		</script>
+
 		<title>Akbar Danial Akma — Fullstack Engineer (Jakarta, SG, London)</title>
 		<meta
 			name="description"

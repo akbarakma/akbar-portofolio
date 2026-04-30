@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import ThemeToggle from "./themeToggle";
 import "./styles/navBar.css";
 
 const NavBar = (props) => {
@@ -10,13 +11,16 @@ const NavBar = (props) => {
 		<React.Fragment>
 			<div className="nav-container">
 				<nav className="navbar">
-					<Link to="/" className="nav-wordmark" aria-label="Akbar Danial Akma — home">
-						<img
-							src="/logo.png"
-							alt="Akbar Danial Akma logo"
-							className="nav-wordmark-logo"
-						/>
-					</Link>
+					<div className="nav-left">
+						<Link to="/" className="nav-wordmark" aria-label="Akbar Danial Akma — home">
+							<img
+								src="/logo.png"
+								alt="Akbar Danial Akma logo"
+								className="nav-wordmark-logo"
+							/>
+						</Link>
+						<ThemeToggle />
+					</div>
 					<div className="nav-background">
 						<ul className="nav-list">
 							<li

@@ -59,7 +59,7 @@
 	overflow: hidden;
 	background: var(--paper-deep);
 	border-radius: 2px;
-	box-shadow: 0 1px 0 var(--rule-strong), 0 40px 60px -40px rgba(26, 22, 19, 0.25);
+	box-shadow: 0 1px 0 var(--rule-strong), 0 40px 60px -40px rgba(var(--shadow-rgb), 0.25);
 	margin-left: auto;
 }
 

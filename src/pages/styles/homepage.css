@@ -75,14 +75,14 @@
 	overflow: hidden;
 	border-radius: 2px;
 	background: var(--paper-deep);
-	box-shadow: 0 1px 0 var(--rule-strong), 0 40px 60px -40px rgba(26, 22, 19, 0.25);
+	box-shadow: 0 1px 0 var(--rule-strong), 0 40px 60px -40px rgba(var(--shadow-rgb), 0.25);
 }
 
 .homepage-portrait::after {
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(180deg, transparent 55%, rgba(26, 22, 19, 0.28) 100%);
+	background: linear-gradient(180deg, transparent 55%, rgba(var(--shadow-rgb), 0.28) 100%);
 	pointer-events: none;
 }
 
@@ -112,7 +112,7 @@
 	align-items: center;
 	border: 1px solid color-mix(in srgb, var(--paper) 60%, transparent);
 	border-radius: 999px;
-	box-shadow: 0 8px 24px -12px rgba(26, 22, 19, 0.35);
+	box-shadow: 0 8px 24px -12px rgba(var(--shadow-rgb), 0.35);
 	z-index: 2;
 }
 
@@ -341,7 +341,7 @@
 .playground-card:hover {
 	transform: translateY(-2px);
 	border-color: var(--accent);
-	box-shadow: 0 24px 48px -32px rgba(26, 22, 19, 0.35);
+	box-shadow: 0 24px 48px -32px rgba(var(--shadow-rgb), 0.35);
 }
 
 .playground-eyebrow {
