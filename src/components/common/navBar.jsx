@@ -70,7 +70,7 @@ const NavBar = (props) => {
 							</li>
 							<li className="nav-item nav-playground">
 								<a
-									href="https://playground.akbarakma.tech"
+									href="https://playground.akbarakma.com"
 									target="_blank"
 									rel="noreferrer"
 									aria-label="Visit my playground — solo projects, live"

@@ -44,16 +44,16 @@ const Homepage = () => {
 				<title>{INFO.main.title}</title>
 				<meta name="description" content={currentSEO.description} />
 				<meta name="keywords" content={seoKeywords} />
-				<link rel="canonical" href="https://www.akbarakma.tech/" />
+				<link rel="canonical" href="https://akbarakma.com/" />
 				<meta property="og:title" content={INFO.main.title} />
 				<meta property="og:description" content={currentSEO.description} />
-				<meta property="og:url" content="https://www.akbarakma.tech/" />
+				<meta property="og:url" content="https://akbarakma.com/" />
 				<meta property="og:type" content="website" />
-				<meta property="og:image" content="https://www.akbarakma.tech/homepage.jpg" />
+				<meta property="og:image" content="https://akbarakma.com/homepage.jpg" />
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:title" content={INFO.main.title} />
 				<meta name="twitter:description" content={currentSEO.description} />
-				<meta name="twitter:image" content="https://www.akbarakma.tech/homepage.jpg" />
+				<meta name="twitter:image" content="https://akbarakma.com/homepage.jpg" />
 			</Helmet>
 
 			<div className="page-content">
@@ -166,7 +166,7 @@ const Homepage = () => {
 
 						<a
 							className="playground-card"
-							href="https://playground.akbarakma.tech"
+							href="https://playground.akbarakma.com"
 							target="_blank"
 							rel="noreferrer"
 							aria-label="Visit my playground — a collection of solo projects shipped from the AI lab"
@@ -188,7 +188,7 @@ const Homepage = () => {
 							</div>
 							<span className="playground-cta">
 								<span>Explore it →</span>
-								<span className="playground-url">playground.akbarakma.tech</span>
+								<span className="playground-url">playground.akbarakma.com</span>
 							</span>
 						</a>
 					</div>

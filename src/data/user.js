@@ -109,7 +109,7 @@ const INFO = {
 				"This site. Built with React so anyone curious — recruiters, teammates, future me — can see what I've worked on without scrolling through a resume.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
 			linkText: "View Project",
-			link: "https://www.akbarakma.tech",
+			link: "https://akbarakma.com",
 			company: "Freelance",
 			skills: ['TypeScript', 'React.js', 'HTML', 'CSS'],
 		},

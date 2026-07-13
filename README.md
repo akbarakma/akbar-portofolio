@@ -1,3 +1,3 @@
 # My Portofolio on Web
 
-Live Website: [akbarakma.tech](https://www.akbarakma.tech)
+Live Website: [akbarakma.com](https://akbarakma.com)
