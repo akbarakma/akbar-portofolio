@@ -5,35 +5,18 @@ import "./styles/footer.css";
 
 const Footer = () => {
 	return (
-		<React.Fragment>
-			<div className="footer">
-				<div className="footer-links">
-					<ul className="footer-nav-link-list">
-						<li className="footer-nav-link-item">
-							<Link to="/">Home</Link>
-						</li>
-						<li className="footer-nav-link-item">
-							<Link to="/about">About</Link>
-						</li>
-						<li className="footer-nav-link-item">
-							<Link to="/projects">Projects</Link>
-						</li>
-						{/* <li className="footer-nav-link-item">
-							<Link to="/articles">Articles</Link>
-						</li> */}
-						<li className="footer-nav-link-item">
-							<Link to="/contact">Contact</Link>
-						</li>
-					</ul>
-				</div>
-
-				<div className="footer-credits">
-					<div className="footer-credits-text">
-						© {new Date().getFullYear()} Akbar Danial Akma · built with care
-					</div>
-				</div>
-			</div>
-		</React.Fragment>
+		<footer className="footer">
+			<p>
+				<span className="footer-signal" aria-hidden="true" />
+				Built by Akbar in Jakarta.
+			</p>
+			<nav aria-label="Footer navigation">
+				<Link to="/about">Profile</Link>
+				<Link to="/projects">Work</Link>
+				<Link to="/contact">Contact</Link>
+			</nav>
+			<p className="footer-copyright">© {new Date().getFullYear()} Akbar Danial Akma</p>
+		</footer>
 	);
 };
 

@@ -1,45 +1,42 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
 import NavBar from "../components/common/navBar";
-
+import Footer from "../components/common/footer";
 import INFO from "../data/user";
 
 import "./styles/404.css";
 
-const Notfound = () => {
-	useEffect(() => {
-		document.title = `404 | ${INFO.main.title}`;
-	}, []);
-
-	return (
-		<React.Fragment>
-			<Helmet>
-				<title>{`404 | ${INFO.main.title}`}</title>
-				<meta name="robots" content="noindex, follow" />
-			</Helmet>
-			<div className="not-found page-content">
-				<NavBar />
-				<div className="content-wrapper">
-					<div className="notfound-container">
-						<div className="notfound-message">
-							<span className="notfound-eyebrow">Error · 404</span>
-							<h1 className="notfound-title">
-								Dead <em>end</em>.
-							</h1>
-							<div className="not-found-message">
-								The page at <span className="url-box">{window.location.pathname}</span> doesn't exist — probably never did. Sorry about that.
-							</div>
-							<a href="/" className="not-found-link">
-								<span>Back to <em>home</em></span>
-								<span className="arrow">→</span>
-							</a>
-						</div>
+const Notfound = () => (
+	<>
+		<Helmet>
+			<title>{`404 | ${INFO.main.title}`}</title>
+			<meta name="robots" content="noindex, follow" />
+		</Helmet>
+		<div className="page-content">
+			<NavBar />
+			<main className="content-wrapper notfound-main">
+				<section className="notfound-card">
+					<div className="notfound-code" aria-hidden="true">404</div>
+					<div>
+						<span className="eyebrow">Page not found</span>
+						<h1>There’s nothing here.</h1>
+						<p>
+							The page <code>{window.location.pathname}</code> does not exist. You can
+							head back home and keep looking around.
+						</p>
+						<Link className="button-link" to="/">
+							Back to home <span aria-hidden="true">→</span>
+						</Link>
 					</div>
+				</section>
+				<div className="page-footer">
+					<Footer />
 				</div>
-			</div>
-		</React.Fragment>
-	);
-};
+			</main>
+		</div>
+	</>
+);
 
 export default Notfound;

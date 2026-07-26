@@ -1,58 +1,44 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
 
 import "./styles/project.css";
 
-const SingleProject = (props) => {
-  const { title, description, link, company, skills, index, featured } = props;
+const SingleProject = ({ title, description, link, company, skills, index, featured }) => {
+	const indexLabel = String(index || 1).padStart(2, "0");
+	const titleParts = title.match(/^(.*?)\s*\(([^)]+)\)\s*$/);
+	const cleanTitle = titleParts ? titleParts[1] : title;
+	const location = titleParts ? titleParts[2] : "Jakarta, Indonesia";
 
-  const indexLabel = index ? `0${index}`.slice(-2) : "";
+	const card = (
+		<article className={`project-card ${featured ? "project-card-featured" : ""}`}>
+			<header>
+				<span className="project-card-index">{indexLabel}</span>
+				<span className="project-card-company">{company}</span>
+				<span className="project-card-location">{location}</span>
+			</header>
 
-  return (
-    <article className={`project-card ${featured ? "project-card-featured" : ""}`}>
-      <div className="project-card-rail">
-        <span className="project-card-index">{indexLabel}</span>
-        <span className="project-card-rule" aria-hidden="true" />
-      </div>
+			<h3>{cleanTitle}</h3>
+			<p>{description}</p>
 
-      <div className="project-card-body">
-        <header className="project-card-head">
-          {company ? (
-            <span className="project-card-chip">{company}</span>
-          ) : null}
-          {featured ? (
-            <span className="project-card-flag">Featured</span>
-          ) : null}
-        </header>
+			<ul aria-label="Technologies used">
+				{skills.slice(0, 6).map((skill) => (
+					<li key={skill}>{skill}</li>
+				))}
+			</ul>
 
-        <h3 className="project-card-title">{title}</h3>
-        <p className="project-card-description">{description}</p>
+			<div className="project-card-bottom">
+				<span>{link ? `Visit ${new URL(link).hostname.replace("www.", "")}` : "Private engagement"}</span>
+				<span aria-hidden="true">{link ? "↗" : "—"}</span>
+			</div>
+		</article>
+	);
 
-        {skills && skills.length > 0 ? (
-          <ul className="project-card-stack">
-            {skills.map((skill) => (
-              <li key={skill} className="project-card-stack-pill">
-                {skill}
-              </li>
-            ))}
-          </ul>
-        ) : null}
-
-        {link !== null ? (
-          <Link to={link} target="_blank" className="project-card-link">
-            <span>Visit {new URL(link).hostname.replace("www.", "")}</span>
-            <FontAwesomeIcon icon={faArrowRight} />
-          </Link>
-        ) : (
-          <span className="project-card-link project-card-link-private">
-            Private engagement · code under NDA
-          </span>
-        )}
-      </div>
-    </article>
-  );
+	return link ? (
+		<a className="project-card-link" href={link} target="_blank" rel="noreferrer">
+			{card}
+		</a>
+	) : (
+		<div className="project-card-link project-card-static">{card}</div>
+	);
 };
 
 export default SingleProject;

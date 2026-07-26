@@ -1,5 +1,3 @@
-import '@fortawesome/fontawesome-svg-core/styles.css'
-import { config } from '@fortawesome/fontawesome-svg-core'
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
@@ -11,8 +9,6 @@ const About = lazy(() => import("./pages/about"));
 const Projects = lazy(() => import("./pages/projects"));
 const Contact = lazy(() => import("./pages/contact"));
 const Notfound = lazy(() => import("./pages/404"));
-
-config.autoAddCss = false
 
 function App() {
 

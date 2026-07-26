@@ -1,90 +1,76 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import ThemeToggle from "./themeToggle";
 import "./styles/navBar.css";
 
-const NavBar = (props) => {
-	const { active } = props;
+const items = [
+	["home", "/", "Home"],
+	["about", "/about", "Profile"],
+	["projects", "/projects", "Work"],
+	["contact", "/contact", "Contact"],
+];
 
+const publicSites = [
+	{
+		label: "MD View",
+		url: "https://md.akbarakma.com",
+	},
+	{
+		label: "Playground",
+		url: "https://playground.akbarakma.com",
+	},
+	{
+		label: "Promptloom",
+		url: "https://prompt.akbarakma.com",
+	},
+	{
+		label: "Short",
+		url: "https://short.akbarakma.com",
+	},
+];
+
+const NavBar = ({ active }) => {
 	return (
-		<React.Fragment>
-			<div className="nav-container">
-				<nav className="navbar">
-					<div className="nav-left">
-						<Link to="/" className="nav-wordmark" aria-label="Akbar Danial Akma — home">
-							<img
-								src="/logo.png"
-								alt="Akbar Danial Akma logo"
-								className="nav-wordmark-logo"
-							/>
-						</Link>
-						<ThemeToggle />
-					</div>
-					<div className="nav-background">
-						<ul className="nav-list">
-							<li
-								className={
-									active === "home"
-										? "nav-item active"
-										: "nav-item"
-								}
-							>
-								<Link to="/">Home</Link>
-							</li>
-							<li
-								className={
-									active === "about"
-										? "nav-item active"
-										: "nav-item"
-								}
-							>
-								<Link to="/about">About</Link>
-							</li>
-							<li
-								className={
-									active === "projects"
-										? "nav-item active"
-										: "nav-item"
-								}
-							>
-								<Link to="/projects">Projects</Link>
-							</li>
-							{/* <li
-								className={
-									active === "articles"
-										? "nav-item active"
-										: "nav-item"
-								}
-							>
-								<Link to="/articles">Articles</Link>
-							</li> */}
-							<li
-								className={
-									active === "contact"
-										? "nav-item active"
-										: "nav-item"
-								}
-							>
-								<Link to="/contact">Contact</Link>
-							</li>
-							<li className="nav-item nav-playground">
-								<a
-									href="https://playground.akbarakma.com"
-									target="_blank"
-									rel="noreferrer"
-									aria-label="Visit my playground — solo projects, live"
-								>
-									<span className="nav-playground-dot" aria-hidden="true" />
-									<span className="nav-playground-label">playground</span>
-									<span className="nav-playground-arrow" aria-hidden="true">↗</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</nav>
+		<aside className="site-rail">
+			<div className="rail-brand">
+				<Link to="/" className="rail-mark" aria-label="Akbar Danial Akma — home">
+					<img src="/logo.png" alt="" />
+				</Link>
+				<div className="rail-identity">
+					<strong>Akbar Akma</strong>
+					<span>Senior Software Engineer</span>
+				</div>
 			</div>
-		</React.Fragment>
+
+			<nav className="rail-primary-nav" aria-label="Primary navigation">
+				<ol className="rail-nav">
+					{items.map(([key, path, label], index) => (
+						<li key={key} className={active === key ? "active" : ""}>
+							<Link to={path} aria-current={active === key ? "page" : undefined}>
+								<span className="rail-number">{String(index + 1).padStart(2, "0")}</span>
+								<span>{label}</span>
+							</Link>
+						</li>
+					))}
+				</ol>
+			</nav>
+
+			<nav className="rail-bottom" aria-labelledby="public-websites-label">
+				<span id="public-websites-label" className="rail-section-label">Public websites</span>
+				{publicSites.map((site) => (
+					<a
+						key={site.url}
+						className="rail-public-site"
+						href={site.url}
+						target="_blank"
+						rel="noreferrer"
+					>
+						<span>{site.label}</span>
+						<span aria-hidden="true">↗</span>
+					</a>
+				))}
+			</nav>
+		</aside>
 	);
 };
 

@@ -1,27 +1,30 @@
-@import "@fontsource-variable/fraunces";
-@import "@fontsource/newsreader/400.css";
-@import "@fontsource/newsreader/500.css";
-@import "@fontsource/newsreader/400-italic.css";
+@import "@fontsource-variable/bricolage-grotesque";
+@import "@fontsource-variable/manrope";
 @import "@fontsource-variable/jetbrains-mono";
+@import "@fontsource/newsreader/400-italic.css";
 @import "./data/styles.css";
-
-body {
-	margin: 0;
-	background: var(--paper);
-	color: var(--ink);
-	font-family: var(--font-body);
-	font-size: 17px;
-	line-height: 1.6;
-	font-weight: 400;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizeLegibility;
-}
 
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	background: var(--canvas);
+}
+
+body {
+	margin: 0;
+	background: var(--canvas);
+	color: var(--ink);
+	font-family: var(--body);
+	font-size: 16px;
+	line-height: 1.6;
+	font-weight: 450;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
 
 a {
@@ -34,21 +37,38 @@ img {
 	max-width: 100%;
 }
 
-button {
+button,
+input,
+textarea {
 	font: inherit;
 	color: inherit;
 }
 
 ::selection {
-	background: var(--accent);
-	color: var(--paper);
+	background: var(--lime);
+	color: var(--ink);
 }
 
 code {
-	font-family: var(--font-mono);
+	font-family: var(--mono);
+}
+
+:focus-visible {
+	outline: 3px solid var(--blue);
+	outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+	body {
+		font-size: 15px;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
 	*,
 	*::before,
 	*::after {

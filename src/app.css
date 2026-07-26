@@ -1,16 +1,16 @@
 @import "./data/styles.css";
 
 ::-webkit-scrollbar {
-	width: 10px;
+	width: 11px;
 }
 
 ::-webkit-scrollbar-track {
-	background-color: var(--paper);
+	background: var(--canvas-deep);
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: var(--rule-strong);
-	border-radius: 5px;
+	background: var(--ink-soft);
+	border: 3px solid var(--canvas-deep);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -18,14 +18,14 @@
 }
 
 .App {
-	background: var(--paper);
+	background: var(--canvas);
 	min-height: 100vh;
 }
 
 .page-content {
-	background-color: var(--paper);
 	position: relative;
 	min-height: 100vh;
+	padding-left: var(--rail);
 }
 
 .content-wrapper {
@@ -34,48 +34,33 @@
 	padding: 0 var(--gutter);
 }
 
-.title {
-	color: var(--ink);
-	font-family: var(--font-display);
-	font-variation-settings: "opsz" 144, "SOFT" 30, "wght" 380;
-	font-size: clamp(40px, 6.2vw, 76px);
-	font-weight: 380;
-	line-height: 1.02;
-	letter-spacing: -0.02em;
-	margin: 0;
-}
-
-.subtitle {
-	color: var(--ink);
-	font-family: var(--font-body);
-	font-size: clamp(17px, 1.5vw, 20px);
-	line-height: 1.55;
-	margin-top: 24px;
-	font-weight: 400;
-	max-width: 62ch;
-}
-
-.mono-label {
-	font-family: var(--font-mono);
-	font-size: 12px;
-	font-weight: 500;
-	letter-spacing: 0.08em;
+.eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	font-family: var(--mono);
+	font-size: 11px;
+	font-weight: 650;
+	letter-spacing: 0.12em;
 	text-transform: uppercase;
-	color: var(--muted);
+	color: var(--ink-soft);
 }
 
-.accent {
-	color: var(--accent);
+.eyebrow::before {
+	content: "";
+	width: 8px;
+	height: 8px;
+	background: var(--orange);
 }
 
 .page-footer {
-	margin-top: 96px;
+	margin-top: clamp(72px, 9vw, 128px);
 }
 
-@keyframes fadeRise {
+@keyframes enter {
 	from {
 		opacity: 0;
-		transform: translateY(12px);
+		transform: translateY(20px);
 	}
 	to {
 		opacity: 1;
@@ -83,31 +68,77 @@
 	}
 }
 
-.reveal {
-	opacity: 0;
-	transform: translateY(12px);
-	transition: opacity 640ms var(--ease-out), transform 640ms var(--ease-out);
-	will-change: opacity, transform;
-}
-
-.reveal.is-visible {
-	opacity: 1;
-	transform: translateY(0);
-}
-
 .stagger > * {
 	opacity: 0;
-	animation: fadeRise 700ms var(--ease-out) forwards;
+	animation: enter 780ms var(--ease-out) forwards;
 }
 
-.stagger > *:nth-child(1) { animation-delay: 40ms; }
-.stagger > *:nth-child(2) { animation-delay: 120ms; }
-.stagger > *:nth-child(3) { animation-delay: 200ms; }
-.stagger > *:nth-child(4) { animation-delay: 280ms; }
-.stagger > *:nth-child(5) { animation-delay: 360ms; }
-.stagger > *:nth-child(6) { animation-delay: 440ms; }
+.stagger > *:nth-child(1) { animation-delay: 60ms; }
+.stagger > *:nth-child(2) { animation-delay: 150ms; }
+.stagger > *:nth-child(3) { animation-delay: 240ms; }
+.stagger > *:nth-child(4) { animation-delay: 330ms; }
+.stagger > *:nth-child(5) { animation-delay: 420ms; }
 
-@media (max-width: 760px) {
+.text-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	font-family: var(--mono);
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	border-bottom: 1px solid currentColor;
+	padding-bottom: 3px;
+	transition: color 180ms ease, gap 320ms var(--ease-out);
+}
+
+.text-link:hover {
+	color: var(--blue);
+	gap: 16px;
+}
+
+.button-link {
+	min-height: 48px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 22px;
+	padding: 12px 18px;
+	border: 1px solid var(--ink);
+	background: var(--ink);
+	color: var(--canvas-raised);
+	font-family: var(--mono);
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	box-shadow: 5px 5px 0 var(--blue);
+	transition: transform 220ms var(--ease-out), box-shadow 220ms var(--ease-out), background 180ms ease;
+}
+
+.button-link:hover {
+	transform: translate(3px, 3px);
+	box-shadow: 2px 2px 0 var(--blue);
+	background: var(--blue-deep);
+}
+
+@media (max-width: 920px) {
+	.page-content {
+		padding-left: 0;
+		padding-top: 86px;
+	}
+}
+
+@media (max-width: 600px) {
+	.page-content {
+		padding-top: 118px;
+	}
+
+	.content-wrapper {
+		padding-inline: 18px;
+	}
+
 	.page-footer {
 		margin-top: 64px;
 	}

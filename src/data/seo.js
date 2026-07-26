@@ -2,15 +2,15 @@ const SEO = [
 	{
 		page: "home",
 		description:
-			"Akbar Danial Akma — Fullstack Engineer with 5+ years of building complex applications end-to-end across logistics, e-commerce, and social platforms. Comfortable across the stack (TypeScript, Go, Python, Node.js, React) and currently exploring AI agents.",
-		keywords: ["Akbar Danial Akma", "Akbar Akma", "Fullstack Engineer", "TypeScript", "Golang", "Python", "Node.js", "React", "AI agents", "portfolio"],
+			"Akbar Danial Akma — Senior Software Engineer with 5+ years of experience building logistics systems, marketplace integrations, web apps, mobile products, and AI tools.",
+		keywords: ["Akbar Danial Akma", "Akbar Akma", "Senior Software Engineer", "TypeScript", "Golang", "Python", "Node.js", "React", "AI agents", "portfolio"],
 	},
 
 	{
 		page: "about",
 		description:
-			"The story behind Akbar Danial Akma — a Fullstack Engineer shipping software for teams in Jakarta, Singapore, and London, and lately building with LLMs and AI agents.",
-		keywords: ["Akbar Danial Akma", "Akbar Akma", "about", "Fullstack Engineer", "AI agents", "experience"],
+			"About Akbar Danial Akma, a Senior Software Engineer with experience building software for teams in Jakarta, Singapore, and London.",
+		keywords: ["Akbar Danial Akma", "Akbar Akma", "about", "Senior Software Engineer", "AI agents", "experience"],
 	},
 
 	{

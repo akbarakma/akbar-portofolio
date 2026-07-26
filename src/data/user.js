@@ -1,6 +1,6 @@
 const INFO = {
 	main: {
-		title: "Akbar Danial Akma — Fullstack Engineer",
+		title: "Akbar Danial Akma — Senior Software Engineer",
 		name: "Akbar Danial Akma",
 		email: "akbarajo1234@gmail.com",
 		logo: "../logo.png",
@@ -9,26 +9,51 @@ const INFO = {
 	socials: {
 		github: "https://github.com/akbarakma",
 		linkedin: "https://www.linkedin.com/in/akbarakma",
-		cv: "https://github.com/akbarakma/akbar-portofolio/blob/master/public/akbar-danial-akma-resume.pdf",
+		cv: "/akbar-danial-akma-resume.pdf",
 	},
 
 	homepage: {
-		title: "Fullstack Engineer",
+		title: "Senior Software Engineer",
 		description:
-			"Hey, I'm Akbar — a Fullstack Engineer with 5+ years of building complex applications end-to-end. I'm comfortable across the stack (TypeScript, Go, Python, Node.js, React), shipping everything from APIs and data layers to the interfaces sitting on top of them. I've delivered logistics platforms that absorb millions of requests on event days, marketplace integrations, and mobile apps used in Jakarta, Singapore, and London. Lately I've been pulled into the AI scene — building with LLMs and AI agents to see how far they can push the products I work on.",
-		currentlyItems: [
-			"wrangling AI agents.",
-			"working on my playground.",
-			"brewing a coffee.",
-			"yes, I still use StackOverflow.",
-		],
+			"Hey, I'm Akbar — a Senior Software Engineer with 5+ years of experience building backend services, web apps, and mobile products. I work with TypeScript, Go, Python, Node.js, and React. I've built logistics systems that handle millions of requests on busy campaign days, marketplace integrations, and mobile apps used in Jakarta, Singapore, and London. I also spend a lot of time building with LLMs and AI agents.",
 	},
 
 	about: {
 		title: "About Me and My Job Experience",
 		description:
-			"Hey, thanks for stopping by. I'm Akbar — a Fullstack Engineer with 5+ years of experience, equally at home shipping APIs, data layers, and the UIs that sit on top of them. Over the years I've built software with small teams in London and with larger companies in Jakarta and Singapore: voice-based social apps, marketplace integrations, and logistics systems that stay up when traffic surges past a million requests on event days. I care about writing code that's clean enough to hand off and reliable enough to stop worrying about. I'm curious by default — most recently that curiosity has pulled me into AI agents, and I've been building small experiments to see how they reshape the way we build products. If any of that sounds interesting, the roles that got me here are below, and the Projects section has the full list of what I've built.",
+			"Hey, thanks for stopping by. I'm Akbar, a Senior Software Engineer with 5+ years of experience. I work across backend and frontend, but I care more about solving the right problem than staying in one layer. I've worked with small teams in London and larger companies in Jakarta and Singapore. Along the way, I've built social apps, marketplace integrations, and logistics systems that handle more than a million requests on busy days. I like code that is easy to hand over and software that keeps working after launch. These days, I also spend a lot of time building with AI agents and learning where they are actually useful.",
 	},
+
+	publicSites: [
+		{
+			title: "Playground",
+			url: "https://playground.akbarakma.com",
+			displayUrl: "playground.akbarakma.com",
+			description: "Small browser games and weekend projects. Free to play, with no ads or sign-up.",
+			tag: "Games & experiments",
+		},
+		{
+			title: "Promptloom",
+			url: "https://prompt.akbarakma.com",
+			displayUrl: "prompt.akbarakma.com",
+			description: "Turn a rough idea into a clear prompt you can give to an AI agent.",
+			tag: "AI tool",
+		},
+		{
+			title: "Short URL",
+			url: "https://short.akbarakma.com",
+			displayUrl: "short.akbarakma.com",
+			description: "A simple link shortener that I built and run on my own server.",
+			tag: "Utility",
+		},
+		{
+			title: "Markdown Viewer",
+			url: "https://md.akbarakma.com",
+			displayUrl: "md.akbarakma.com",
+			description: "A quiet place to read, write, preview, and share Markdown.",
+			tag: "Writing tool",
+		},
+	],
 
 	homepageProjects: [
 		{
@@ -70,6 +95,17 @@ const INFO = {
 	],
 
 	projects: [
+		{
+			title: "Markdown Viewer (Jakarta, Indonesia)",
+			description:
+				"A Markdown editor and viewer with live preview, search, Mermaid diagrams, sharing, and an AI chat that reads the current document. I built it for my own daily work and host it at md.akbarakma.com.",
+			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+			linkText: "View Project",
+			link: "https://md.akbarakma.com",
+			company: "Personal Project",
+			skills: ['TypeScript', 'Next.js', 'React.js', 'Markdown', 'Mermaid', 'AI'],
+		},
+
 		{
 			title: "Pickup Request Service Sicepat (Jakarta, Indonesia)",
 			description:

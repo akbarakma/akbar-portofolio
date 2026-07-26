@@ -1,26 +1,26 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
 import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
-import AllProjects from "../components/projects/allProjects";
-
+import SingleProject from "../components/projects/singleProject";
 import INFO from "../data/user";
 import SEO from "../data/seo";
-import { Link } from "react-router-dom";
 
 import "./styles/projects.css";
 
 const currentSEO = SEO.find((item) => item.page === "projects");
-const seoKeywords = currentSEO.keywords.join(", ");
 
 const Projects = () => {
+	const companies = new Set(INFO.projects.map((project) => project.company).filter(Boolean)).size;
+
 	return (
-		<React.Fragment>
+		<>
 			<Helmet>
 				<title>{`Projects | ${INFO.main.title}`}</title>
 				<meta name="description" content={currentSEO.description} />
-				<meta name="keywords" content={seoKeywords} />
+				<meta name="keywords" content={currentSEO.keywords.join(", ")} />
 				<link rel="canonical" href="https://akbarakma.com/projects" />
 				<meta property="og:title" content={`Projects | ${INFO.main.title}`} />
 				<meta property="og:description" content={currentSEO.description} />
@@ -28,67 +28,81 @@ const Projects = () => {
 				<meta property="og:type" content="website" />
 				<meta property="og:image" content="https://akbarakma.com/homepage.jpg" />
 				<meta name="twitter:card" content="summary_large_image" />
-				<meta name="twitter:title" content={`Projects | ${INFO.main.title}`} />
-				<meta name="twitter:description" content={currentSEO.description} />
-				<meta name="twitter:image" content="https://akbarakma.com/homepage.jpg" />
 			</Helmet>
 
 			<div className="page-content">
 				<NavBar active="projects" />
-				<div className="content-wrapper">
-					<section className="projects-hero stagger">
-						<div>
-							<span className="projects-eyebrow">Projects · {INFO.projects.length} entries</span>
-							<h1 className="projects-display">
-								Things I've <em>made</em> so far.
-							</h1>
+				<main className="content-wrapper">
+					<section className="work-hero stagger">
+						<div className="work-title">
+							<span className="eyebrow">Selected projects</span>
+							<h1>Things I’ve built.</h1>
 						</div>
-						<div>
-							<p className="projects-lede">
-								Some of these were built solo from a blank repo; others came together with teams across Jakarta, Singapore, and London. Each one taught me something I couldn't have learned in isolation — about scale, about trade-offs, about what "done" actually means.
+						<div className="work-intro">
+							<p>
+								I’ve worked on logistics, e-commerce, health, social, and mobile
+								products. Some were built with a team and some from scratch. Here is
+								what I worked on and the tools I used.
 							</p>
-							<div className="projects-cta-row">
-								<Link to="/contact" className="projects-cta-link">
-									Want to work together? → say hi
-								</Link>
-							</div>
+							<Link className="button-link" to="/contact">
+								Let’s talk <span aria-hidden="true">→</span>
+							</Link>
 						</div>
 					</section>
 
-					<div className="projects-meta-strip">
-						<div className="projects-meta-block">
-							<span className="projects-meta-label">Companies</span>
-							<span className="projects-meta-value">
-								{Array.from(new Set(INFO.projects.map((p) => p.company).filter(Boolean))).join(" · ")}
-							</span>
+					<section className="work-metrics" aria-label="Project archive summary">
+						<div>
+							<span>Projects</span>
+							<strong>{String(INFO.projects.length).padStart(2, "0")}</strong>
 						</div>
-						<div className="projects-meta-block">
-							<span className="projects-meta-label">Cities</span>
-							<span className="projects-meta-value">Jakarta · Singapore · London</span>
+						<div>
+							<span>Companies</span>
+							<strong>{String(companies).padStart(2, "0")}</strong>
 						</div>
-						<div className="projects-meta-block">
-							<span className="projects-meta-label">Span</span>
-							<span className="projects-meta-value">2019 — Now</span>
+						<div>
+							<span>Countries</span>
+							<strong>03</strong>
 						</div>
-					</div>
+						<p>Jakarta · Singapore · London</p>
+					</section>
 
-					<div className="projects-list">
-						<AllProjects />
-					</div>
+					<section className="project-archive">
+						<header>
+							<div>
+								<span className="eyebrow">All projects</span>
+								<h2>More of my work.</h2>
+							</div>
+							<p>
+								Some projects have a public link. Others were private client work, so
+								I’ve shared what I built without exposing their code.
+							</p>
+						</header>
 
-					<div className="projects-bottom-cta">
-						<Link to="/about">
-							<span>More <em>about me</em> &amp; where I've worked</span>
-							<span className="arrow">→</span>
+						<div className="project-grid">
+							{INFO.projects.map((project, index) => (
+								<SingleProject
+									key={project.title}
+									{...project}
+									index={index + 1}
+									featured={index === 0}
+								/>
+							))}
+						</div>
+					</section>
+
+					<section className="work-footer-cta">
+						<span>Have a project in mind?</span>
+						<Link to="/contact">
+							Let’s talk. <span aria-hidden="true">→</span>
 						</Link>
-					</div>
+					</section>
 
 					<div className="page-footer">
 						<Footer />
 					</div>
-				</div>
+				</main>
 			</div>
-		</React.Fragment>
+		</>
 	);
 };
 
