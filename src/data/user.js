@@ -15,13 +15,13 @@ const INFO = {
 	homepage: {
 		title: "Senior Software Engineer",
 		description:
-			"Hey, I'm Akbar — a Senior Software Engineer with 5+ years of experience building backend services, web apps, and mobile products. I work with TypeScript, Go, Python, Node.js, and React. I've built logistics systems that handle millions of requests on busy campaign days, marketplace integrations, and mobile apps used in Jakarta, Singapore, and London. I also spend a lot of time building with LLMs and AI agents.",
+			"Hey, I'm Akbar. For five years I've built the unglamorous backend that keeps things moving: pickup routing that holds when a campaign day triples the traffic, marketplace syncs that can't drop an order, mobile apps shipped out of Jakarta, Singapore, and London. Mostly TypeScript, Go, and Python. Lately my spare cycles go to LLMs and AI agents, working out where they earn their keep and where they don't.",
 	},
 
 	about: {
 		title: "About Me and My Job Experience",
 		description:
-			"Hey, thanks for stopping by. I'm Akbar, a Senior Software Engineer with 5+ years of experience. I work across backend and frontend, but I care more about solving the right problem than staying in one layer. I've worked with small teams in London and larger companies in Jakarta and Singapore. Along the way, I've built social apps, marketplace integrations, and logistics systems that handle more than a million requests on busy days. I like code that is easy to hand over and software that keeps working after launch. These days, I also spend a lot of time building with AI agents and learning where they are actually useful.",
+			"I'm Akbar, a Senior Software Engineer, five years in. I started on the backend and never really left, though I'll go to whichever layer the problem is actually hiding in. I've worked in three-person teams in London and in companies big enough that shipping meant convincing four other teams first. Both taught me things. Somewhere in there I built social apps, marketplace integrations, and a logistics system that clears a million requests on a bad day. What I care about hasn't shifted much: code the next person can pick up without calling me, and software that still works six months after launch. Right now I'm deep in AI agents, mostly working out where they genuinely help and where they are just expensive.",
 	},
 
 	publicSites: [
@@ -33,14 +33,14 @@ const INFO = {
 			tag: "Games & experiments",
 		},
 		{
-			title: "Promptloom",
+			title: "PromptLoom",
 			url: "https://prompt.akbarakma.com",
 			displayUrl: "prompt.akbarakma.com",
 			description: "Turn a rough idea into a clear prompt you can give to an AI agent.",
 			tag: "AI tool",
 		},
 		{
-			title: "Short URL",
+			title: "URL Shortener",
 			url: "https://short.akbarakma.com",
 			displayUrl: "short.akbarakma.com",
 			description: "A simple link shortener that I built and run on my own server.",
@@ -55,46 +55,45 @@ const INFO = {
 		},
 	],
 
-	homepageProjects: [
-		{
-			title: "Tannoi Mobile App (London, UK)",
-			description:
-				"A voice-first social app on iOS and Android. I built the backend from scratch — voice-note storage on Google Cloud, social login across Google, Facebook, and Apple, and a few timezone headaches to sort out since the server lived in London.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: null,
-		},
+	stats: [
+		{ num: "5+", label: "years shipping" },
+		{ num: null, label: "projects built" },
+		{ num: "3", label: "countries" },
+		{ num: "1M+", label: "requests / peak day" },
+	],
 
-		{
-			title: "Hubbed (Singapore)",
-			description:
-				"An e-commerce and inventory platform integrated with Shopee and Lazada. I built the sync layer that keeps orders and stock aligned in real time, no matter which marketplace the customer came from.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
-			linkText: "View Project",
-			link: 'https://www.hubbed.co',
-		},
-
-		{
-			title: "Grow With Kg Website (Jakarta, Indonesia)",
-			description:
-				"Built Gramedia's company profile from a blank project — public site plus an internal CMS for their team. React with Redux Thunk on the frontend, PostgreSQL on the back, hosted on Firebase and DigitalOcean.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
-			linkText: "View Project",
-			link: 'https://www.growwithkg.id',
-		},
-
-		{
-			title: "Fourz Mobile Apps (London, UK)",
-			description:
-				"An iOS app for creating and ranking content in a four-image format. Set up Firebase deep linking so the login flow would actually hold, and built the notification system with Gmail Node Mailer.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
-			linkText: "View Project",
-			link: null,
-		},
-
+	highlightProjects: [
+		"Markdown Viewer (Jakarta, Indonesia)",
+		"PromptLoom (Jakarta, Indonesia)",
+		"URL Shortener (Jakarta, Indonesia)",
+		"Pickup Request Service Sicepat (Jakarta, Indonesia)",
+		"Grow With Kg Website (Jakarta, Indonesia)",
+		"Tannoi Mobile App (London, UK)",
 	],
 
 	projects: [
+		{
+			title: "PromptLoom (Jakarta, Indonesia)",
+			description:
+				"Turn a rough idea into a clear prompt you can give to an AI agent. Built it to stop rewriting the same instructions over and over, and host it at prompt.akbarakma.com.",
+			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+			linkText: "View Project",
+			link: "https://prompt.akbarakma.com",
+			company: "Personal Project",
+			skills: ['TypeScript', 'React.js', 'LLM', 'Prompt Engineering'],
+		},
+
+		{
+			title: "URL Shortener (Jakarta, Indonesia)",
+			description:
+				"A simple link shortener that I built and run on my own server. Short links, click tracking, no bloat.",
+			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
+			linkText: "View Project",
+			link: "https://short.akbarakma.com",
+			company: "Personal Project",
+			skills: ['TypeScript', 'Node.js', 'PostgreSQL'],
+		},
+
 		{
 			title: "Markdown Viewer (Jakarta, Indonesia)",
 			description:
@@ -112,7 +111,7 @@ const INFO = {
 				"A request-routing service written in TypeScript and PostgreSQL. On campaign days, it fans out thousands to millions of pickup requests while keeping data in sync across services through Kafka.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
 			linkText: "View Project",
-			link: null,
+			link: "https://www.sicepat.com",
 			company: "Sicepat Ekspres Indonesia",
 			skills: ['TypeScript', 'AWS', 'Javascript', 'Snowflake', 'Kafka', 'Joblst', 'PostgreSQL', 'MariaDB'],
 		},
@@ -123,7 +122,7 @@ const INFO = {
 				"Migrated the backend off a legacy system onto an in-house Golang service. Redesigned the database layer so daily pickup traffic stays predictable and cheap to run.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
 			linkText: "View Project",
-			link: null,
+			link: "https://www.sicepat.com",
 			company: "Sicepat Ekspres Indonesia",
 			skills: ['Golang', 'MongoDB', 'Kafka', 'Snowflake'],
 		},
@@ -134,20 +133,9 @@ const INFO = {
 				"A PHP tool the office team uses to trace packages, manage pickups and rejections, and bulk-upload hundreds of AWBs at once. Most of the work went into finding and fixing the performance walls that showed up under load.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
 			linkText: "View Project",
-			link: null,
+			link: "https://www.sicepat.com",
 			company: "Sicepat Ekspres Indonesia",
 			skills: ['PHP', 'HTML', 'CSS', 'Kafka', 'Ajax', 'PostgreSQL', 'Snowflake'],
-		},
-
-		{
-			title: "Akbar Danial Akma Portfolio Website (Jakarta, Indonesia)",
-			description:
-				"This site. Built with React so anyone curious — recruiters, teammates, future me — can see what I've worked on without scrolling through a resume.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
-			linkText: "View Project",
-			link: "https://akbarakma.com",
-			company: "Freelance",
-			skills: ['TypeScript', 'React.js', 'HTML', 'CSS'],
 		},
 
 		{
@@ -164,10 +152,10 @@ const INFO = {
 		{
 			title: "Grow With Kg Website (Jakarta, Indonesia)",
 			description:
-				"Built Gramedia's company profile from a blank project — public site plus an internal CMS for their team. React with Redux Thunk on the frontend, PostgreSQL on the back, hosted on Firebase and DigitalOcean.",
+				"Built Gramedia's company profile from a blank project. Public site plus an internal CMS for their team. React with Redux Thunk on the frontend, PostgreSQL on the back, hosted on Firebase and DigitalOcean.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
-			link: 'https://www.growwithkg.id',
+			link: 'https://www.gramedia.com',
 			company: "Gramedia",
 			skills: ['TypeScript', 'Firebase', 'React.js', 'Redux Thunk', 'JavaScript', 'PostgreSQL', 'Node.js'],
 		},
@@ -197,7 +185,7 @@ const INFO = {
 		{
 			title: "Tannoi Mobile App (London, UK)",
 			description:
-				"A voice-first social app on iOS and Android. I built the backend from scratch — voice-note storage on Google Cloud, social login across Google, Facebook, and Apple, and a few timezone headaches to sort out since the server lived in London.",
+				"A voice-first social app on iOS and Android. I built the backend from scratch: voice-note storage on Google Cloud, social login across Google, Facebook, and Apple, and a few timezone headaches to sort out since the server lived in London.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
 			link: null,
@@ -208,7 +196,7 @@ const INFO = {
 		{
 			title: "Medilab Website (Jakarta, Indonesia)",
 			description:
-				"During the COVID peak, I worked with a medical lab to build a patient registration and symptom-tracking site, with a CMS their admins could actually run themselves. A lot of the work went into locking down the patient data properly — the rest into making sure the flow was fast enough for people who weren't there to enjoy the UX.",
+				"During the COVID peak, I worked with a medical lab to build a patient registration and symptom-tracking site, with a CMS their admins could actually run themselves. A lot of the work went into locking down the patient data properly, the rest into making sure the flow was fast enough for people who weren't there to enjoy the UX.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
 			linkText: "View Project",
 			link: null,
@@ -221,7 +209,7 @@ const INFO = {
 		{
 			title: "Sicepat Ekspres Indonesia",
 			description:
-				"Led work on core logistics systems — handling high-volume data change requests, tuning Postgres for better throughput, and building responsive interfaces across the stack. Backend in Golang and TypeScript, frontend in PHP and React.",
+				"Led work on core logistics systems: high-volume data change requests, tuning Postgres for better throughput, and building responsive interfaces across the stack. Backend in Golang and TypeScript, frontend in PHP and React.",
 			logo: "sicepat_ekspres_indonesia_logo.jpeg",
 			linkText: "View Project",
 			link: "https://www.sicepat.com",
@@ -232,7 +220,7 @@ const INFO = {
 		{
 			title: "Hubbed",
 			description:
-				"Built the e-commerce and inventory platform that syncs with Shopee and Lazada in real time — orders and stock stay consistent regardless of which marketplace the customer came from.",
+				"Built the e-commerce and inventory platform that syncs with Shopee and Lazada in real time, so orders and stock stay consistent regardless of which marketplace the customer came from.",
 			logo: "hubbedinventory_logo.jpeg",
 			linkText: "View Project",
 			link: 'https://www.hubbed.co',
@@ -243,12 +231,12 @@ const INFO = {
 		{
 			title: "Gramedia",
 			description:
-				"Partnered with Gramedia to take their Grow With Kg website from idea to launch — public site, internal CMS, and the infrastructure around both.",
+				"Partnered with Gramedia to take their Grow With Kg website from idea to launch. Public site, internal CMS, and the infrastructure around both.",
 			logo: "gramedia_logo.jpeg",
 			linkText: "View Project",
-			link: 'https://www.growwithkg.id',
+			link: 'https://www.gramedia.com',
 			years: '2022 - 2022',
-			role: 'Full Stack Engineer'
+			role: 'Freelance'
 		},
 
 		{
@@ -265,7 +253,7 @@ const INFO = {
 		{
 			title: "PT. Prima Indo Medilab",
 			description:
-				"Built and shipped the COVID-19 patient registration platform for a medical lab — end to end, with security tight enough for health data and a CMS simple enough for staff to run it themselves.",
+				"Built and shipped the COVID-19 patient registration platform for a medical lab, end to end, with security tight enough for health data and a CMS simple enough for staff to run it themselves.",
 			logo: "medilab_logo.jpeg",
 			linkText: "View Project",
 			link: null,
@@ -276,7 +264,7 @@ const INFO = {
 		{
 			title: "Hacktiv8 Indonesia",
 			description:
-				"Completed Hacktiv8's intensive fullstack bootcamp. Shipped projects using React, Node, Express, and MongoDB — and came out the other end knowing this was the work I wanted to spend my career on.",
+				"Completed Hacktiv8's intensive fullstack bootcamp. Shipped projects using React, Node, Express, and MongoDB, and came out the other end knowing this was the work I wanted to spend my career on.",
 			logo: "hacktiv8_logo.jpeg",
 			linkText: "View Project",
 			link: "https://www.hacktiv8.com",

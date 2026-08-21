@@ -1,76 +1,82 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
-import "./styles/navBar.css";
-
-const items = [
-	["home", "/", "Home"],
-	["about", "/about", "Profile"],
-	["projects", "/projects", "Work"],
-	["contact", "/contact", "Contact"],
+const links = [
+	["/", "Home"],
+	["/projects", "Projects"],
+	["/about", "About"],
+	["/contact", "Contact"],
 ];
 
-const publicSites = [
-	{
-		label: "MD View",
-		url: "https://md.akbarakma.com",
-	},
-	{
-		label: "Playground",
-		url: "https://playground.akbarakma.com",
-	},
-	{
-		label: "Promptloom",
-		url: "https://prompt.akbarakma.com",
-	},
-	{
-		label: "Short",
-		url: "https://short.akbarakma.com",
-	},
-];
+const NavBar = () => {
+	const { pathname } = useLocation();
+	const [open, setOpen] = useState(false);
 
-const NavBar = ({ active }) => {
+	useEffect(() => {
+		setOpen(false);
+	}, [pathname]);
+
+	// Tapping the same route again does not change pathname, so the menu also
+	// needs an explicit way out.
+	useEffect(() => {
+		if (!open) return undefined;
+		const onKey = (e) => e.key === "Escape" && setOpen(false);
+		const onClickAway = (e) => {
+			if (!e.target.closest(".site-header")) setOpen(false);
+		};
+		document.addEventListener("keydown", onKey);
+		document.addEventListener("click", onClickAway);
+		return () => {
+			document.removeEventListener("keydown", onKey);
+			document.removeEventListener("click", onClickAway);
+		};
+	}, [open]);
+
+	// /work still resolves for old links, so light up Projects for both.
+	const isActive = (path) =>
+		path === "/projects" ? pathname === "/projects" || pathname === "/work" : pathname === path;
+
 	return (
-		<aside className="site-rail">
-			<div className="rail-brand">
-				<Link to="/" className="rail-mark" aria-label="Akbar Danial Akma — home">
-					<img src="/logo.png" alt="" />
+		<header className="site-header">
+			<div className="header-inner">
+				<Link to="/" className="brand" aria-label="Akbar Danial Akma, home">
+					<img src="/logo-mark.png" alt="" className="brand-avatar" width="38" height="38" />
+					<span className="brand-word">
+						<span>akbarakma</span>
+						<span className="brand-tld mono">.com</span>
+					</span>
 				</Link>
-				<div className="rail-identity">
-					<strong>Akbar Akma</strong>
-					<span>Senior Software Engineer</span>
+
+				<nav className={`top-nav ${open ? "open" : ""}`} aria-label="Primary">
+					{links.map(([path, label]) => (
+						<Link
+							key={path}
+							to={path}
+							className={`nav-link ${isActive(path) ? "active" : ""}`}
+							aria-current={isActive(path) ? "page" : undefined}
+							onClick={() => setOpen(false)}
+						>
+							{label}
+						</Link>
+					))}
+				</nav>
+
+				<div className="header-actions">
+					<Link to="/contact" className="header-cta">
+						Hire me
+					</Link>
+					<button
+						className={`menu-btn ${open ? "open" : ""}`}
+						onClick={() => setOpen(!open)}
+						aria-label={open ? "Close menu" : "Open menu"}
+						aria-expanded={open}
+					>
+						<span />
+						<span />
+					</button>
 				</div>
 			</div>
-
-			<nav className="rail-primary-nav" aria-label="Primary navigation">
-				<ol className="rail-nav">
-					{items.map(([key, path, label], index) => (
-						<li key={key} className={active === key ? "active" : ""}>
-							<Link to={path} aria-current={active === key ? "page" : undefined}>
-								<span className="rail-number">{String(index + 1).padStart(2, "0")}</span>
-								<span>{label}</span>
-							</Link>
-						</li>
-					))}
-				</ol>
-			</nav>
-
-			<nav className="rail-bottom" aria-labelledby="public-websites-label">
-				<span id="public-websites-label" className="rail-section-label">Public websites</span>
-				{publicSites.map((site) => (
-					<a
-						key={site.url}
-						className="rail-public-site"
-						href={site.url}
-						target="_blank"
-						rel="noreferrer"
-					>
-						<span>{site.label}</span>
-						<span aria-hidden="true">↗</span>
-					</a>
-				))}
-			</nav>
-		</aside>
+		</header>
 	);
 };
 

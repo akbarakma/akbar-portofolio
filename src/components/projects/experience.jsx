@@ -1,36 +1,28 @@
 import React from "react";
 
-import "./styles/experience.css";
-
-const Experience = ({ title, description, link, logo, years, role, index }) => {
-	const indexLabel = String(index || 1).padStart(2, "0");
-
+const Experience = ({ title, description, link, logo, years, role }) => {
 	return (
-		<article className="experience-row">
-			<div className="experience-marker">
-				<span>{indexLabel}</span>
+		<article className="exp-row">
+			<div className="exp-when mono">
 				<time>{years}</time>
 			</div>
-			<div className="experience-title">
-				{logo ? (
-					<div className="experience-logo">
-						<img src={`/logo/${logo}`} alt="" />
+
+			<div className="exp-main">
+				<header className="exp-head">
+					{logo ? (
+						<img className="exp-logo" src={`/logo/${logo}`} alt="" loading="lazy" />
+					) : null}
+					<div>
+						<h3 className="exp-company">{title}</h3>
+						<span className="exp-role mono">{role}</span>
 					</div>
-				) : null}
-				<div>
-					<span>{role}</span>
-					<h3>{title}</h3>
-				</div>
-			</div>
-			<div className="experience-summary">
-				<p>{description}</p>
+				</header>
+				<p className="exp-desc">{description}</p>
 				{link ? (
-					<a href={link} target="_blank" rel="noreferrer">
-						Visit company <span aria-hidden="true">↗</span>
+					<a className="exp-link mono" href={link} target="_blank" rel="noreferrer">
+						{new URL(link).hostname.replace("www.", "")} <span aria-hidden="true">↗</span>
 					</a>
-				) : (
-					<span className="experience-private">Private engagement</span>
-				)}
+				) : null}
 			</div>
 		</article>
 	);

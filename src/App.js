@@ -1,7 +1,8 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
 import "./app.css";
+import "./styles/site.css";
 import ScrollToTop from "./components/common/scrollToTop";
 
 const Homepage = lazy(() => import("./pages/homepage"));
@@ -11,7 +12,6 @@ const Contact = lazy(() => import("./pages/contact"));
 const Notfound = lazy(() => import("./pages/404"));
 
 function App() {
-
 	return (
 		<div className="App">
 			<ScrollToTop />
@@ -20,6 +20,7 @@ function App() {
 					<Route path="/" element={<Homepage />} />
 					<Route path="/about" element={<About />} />
 					<Route path="/projects" element={<Projects />} />
+					<Route path="/work" element={<Navigate to="/projects" replace />} />
 					<Route path="/contact" element={<Contact />} />
 					<Route path="*" element={<Notfound />} />
 				</Routes>

@@ -2,96 +2,130 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="theme-color" content="#e9e9e1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<meta name="theme-color" content="#fcfcfd" />
+		<meta name="color-scheme" content="light" />
 
-		<title>Akbar Danial Akma — Senior Software Engineer</title>
+		<title>Akbar Danial Akma | Senior Software Engineer</title>
 		<meta
 			name="description"
-			content="Akbar Danial Akma — Senior Software Engineer with 5+ years of experience building logistics systems, marketplace integrations, web apps, mobile products, and AI tools."
+			content="Senior Software Engineer in Jakarta with 5+ years building logistics systems at scale, marketplace integrations, mobile apps, and AI tools. TypeScript, Go, Python, Node.js, React."
 		/>
 		<meta name="author" content="Akbar Danial Akma" />
 		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-		<meta name="googlebot" content="index, follow" />
 
 		<link rel="canonical" href="https://akbarakma.com/" />
-		<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-		<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
+		<link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="16x16 32x32 48x48" />
+		<link rel="icon" type="image/png" sizes="192x192" href="%PUBLIC_URL%/icon-192.png" />
+		<link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
+		<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-		<meta property="og:type" content="website" />
+		<meta property="og:type" content="profile" />
 		<meta property="og:site_name" content="Akbar Danial Akma" />
-		<meta property="og:title" content="Akbar Danial Akma — Senior Software Engineer" />
+		<meta property="og:title" content="Akbar Danial Akma | Senior Software Engineer" />
 		<meta
 			property="og:description"
-			content="Senior Software Engineer with 5+ years of experience. TypeScript, Go, Python, Node.js, React, and AI tools."
+			content="Senior Software Engineer with 5+ years shipping logistics systems at scale, marketplace integrations, mobile apps, and AI tools."
 		/>
 		<meta property="og:url" content="https://akbarakma.com/" />
 		<meta property="og:image" content="https://akbarakma.com/homepage.jpg" />
-		<meta property="og:image:alt" content="Portrait of Akbar Danial Akma, Senior Software Engineer" />
+		<meta property="og:image:width" content="800" />
+		<meta property="og:image:height" content="800" />
+		<meta property="og:image:alt" content="Akbar Danial Akma, Senior Software Engineer" />
 		<meta property="og:locale" content="en_US" />
+		<meta property="profile:first_name" content="Akbar" />
+		<meta property="profile:last_name" content="Danial Akma" />
 
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Akbar Danial Akma — Senior Software Engineer" />
+		<meta name="twitter:title" content="Akbar Danial Akma | Senior Software Engineer" />
 		<meta
 			name="twitter:description"
-			content="Senior Software Engineer with 5+ years of experience. TypeScript, Go, Python, Node.js, React, and AI tools."
+			content="Senior Software Engineer with 5+ years shipping logistics systems at scale, marketplace integrations, mobile apps, and AI tools."
 		/>
 		<meta name="twitter:image" content="https://akbarakma.com/homepage.jpg" />
-		<meta name="twitter:image:alt" content="Portrait of Akbar Danial Akma, Senior Software Engineer" />
+		<meta name="twitter:image:alt" content="Akbar Danial Akma, Senior Software Engineer" />
 
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
-				"@type": "Person",
-				"name": "Akbar Danial Akma",
-				"alternateName": "Akbar Akma",
-				"url": "https://akbarakma.com/",
-				"image": "https://akbarakma.com/homepage.jpg",
-				"jobTitle": "Senior Software Engineer",
-				"description": "Senior Software Engineer with 5+ years of experience building logistics systems, marketplace integrations, web apps, mobile products, and AI tools.",
-				"email": "mailto:akbarajo1234@gmail.com",
-				"address": {
-					"@type": "PostalAddress",
-					"addressLocality": "Jakarta",
-					"addressCountry": "ID"
-				},
-				"knowsAbout": [
-					"Software Engineering",
-					"Backend Engineering",
-					"Frontend Engineering",
-					"TypeScript",
-					"Golang",
-					"Python",
-					"Node.js",
-					"React",
-					"PostgreSQL",
-					"Kafka",
-					"AI Agents",
-					"Large Language Models"
-				],
-				"sameAs": [
-					"https://github.com/akbarakma",
-					"https://www.linkedin.com/in/akbarakma"
+				"@graph": [
+					{
+						"@type": "WebSite",
+						"@id": "https://akbarakma.com/#website",
+						"url": "https://akbarakma.com/",
+						"name": "Akbar Danial Akma",
+						"inLanguage": "en",
+						"publisher": { "@id": "https://akbarakma.com/#person" }
+					},
+					{
+						"@type": "ProfilePage",
+						"@id": "https://akbarakma.com/#profilepage",
+						"url": "https://akbarakma.com/",
+						"name": "Akbar Danial Akma | Senior Software Engineer",
+						"isPartOf": { "@id": "https://akbarakma.com/#website" },
+						"mainEntity": { "@id": "https://akbarakma.com/#person" }
+					},
+					{
+						"@type": "Person",
+						"@id": "https://akbarakma.com/#person",
+						"name": "Akbar Danial Akma",
+						"alternateName": "Akbar Akma",
+						"url": "https://akbarakma.com/",
+						"image": {
+							"@type": "ImageObject",
+							"url": "https://akbarakma.com/homepage.jpg",
+							"width": 800,
+							"height": 800
+						},
+						"jobTitle": "Senior Software Engineer",
+						"description": "Senior Software Engineer with 5+ years building logistics systems at scale, marketplace integrations, mobile apps, and AI tools. Works across TypeScript, Go, Python, Node.js, and React.",
+						"email": "mailto:akbarajo1234@gmail.com",
+						"worksFor": {
+							"@type": "Organization",
+							"name": "Sicepat Ekspres Indonesia",
+							"url": "https://www.sicepat.com"
+						},
+						"alumniOf": {
+							"@type": "EducationalOrganization",
+							"name": "Hacktiv8 Indonesia",
+							"url": "https://www.hacktiv8.com"
+						},
+						"address": {
+							"@type": "PostalAddress",
+							"addressLocality": "Jakarta",
+							"addressCountry": "ID"
+						},
+						"sameAs": [
+							"https://github.com/akbarakma",
+							"https://www.linkedin.com/in/akbarakma"
+						],
+						"knowsAbout": [
+							"Fullstack Engineering",
+							"Backend Engineering",
+							"TypeScript",
+							"Golang",
+							"Python",
+							"Node.js",
+							"React",
+							"PostgreSQL",
+							"Apache Kafka",
+							"Logistics Systems",
+							"Marketplace Integration",
+							"AI Agents",
+							"LLM Integration"
+						]
+					}
 				]
-			}
-		</script>
-
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "WebSite",
-				"name": "Akbar Danial Akma — Senior Software Engineer",
-				"url": "https://akbarakma.com/",
-				"author": {
-					"@type": "Person",
-					"name": "Akbar Danial Akma"
-				},
-				"inLanguage": "en"
 			}
 		</script>
 	</head>
 	<body>
-		<noscript>You need to enable JavaScript to view Akbar Danial Akma's portfolio.</noscript>
+		<noscript>
+			Akbar Danial Akma is a Senior Software Engineer based in Jakarta, Indonesia, with more
+			than five years of experience building logistics systems, marketplace integrations,
+			mobile apps, and AI tools in TypeScript, Go, Python, Node.js, and React. Enable
+			JavaScript to view the full site, or reach him at akbarajo1234@gmail.com.
+		</noscript>
 		<div id="root"></div>
 	</body>
 </html>

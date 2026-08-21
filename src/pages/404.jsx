@@ -1,42 +1,38 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
+import Seo from "../components/common/seo";
 import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
-import INFO from "../data/user";
-
-import "./styles/404.css";
 
 const Notfound = () => (
-	<>
-		<Helmet>
-			<title>{`404 | ${INFO.main.title}`}</title>
-			<meta name="robots" content="noindex, follow" />
-		</Helmet>
-		<div className="page-content">
-			<NavBar />
-			<main className="content-wrapper notfound-main">
-				<section className="notfound-card">
-					<div className="notfound-code" aria-hidden="true">404</div>
-					<div>
-						<span className="eyebrow">Page not found</span>
-						<h1>There’s nothing here.</h1>
-						<p>
-							The page <code>{window.location.pathname}</code> does not exist. You can
-							head back home and keep looking around.
-						</p>
-						<Link className="button-link" to="/">
-							Back to home <span aria-hidden="true">→</span>
-						</Link>
-					</div>
-				</section>
-				<div className="page-footer">
-					<Footer />
-				</div>
-			</main>
-		</div>
-	</>
+	<div className="site-shell">
+		<Seo
+			title="Page not found | Akbar Danial Akma"
+			description="That page does not exist. Head back to the homepage or browse the projects."
+			path="/404"
+		/>
+		<NavBar />
+		<main className="site-main notfound-main">
+			<p className="notfound-code mono" aria-hidden="true">
+				404
+			</p>
+			<h1 className="page-title">Nothing lives here.</h1>
+			<p className="page-lede">
+				<code>{window.location.pathname}</code> is not a page I ever built. Either I moved
+				it, or you found a typo. Both are on me.
+			</p>
+			<div className="notfound-actions">
+				<Link to="/" className="btn btn-solid">
+					Back home
+				</Link>
+				<Link to="/projects" className="btn btn-ghost">
+					See the projects
+				</Link>
+			</div>
+		</main>
+		<Footer />
+	</div>
 );
 
 export default Notfound;
