@@ -12,6 +12,15 @@ const Contact = () => {
 				title="Contact | Akbar Danial Akma"
 				description="Get in touch with Akbar Danial Akma, Senior Software Engineer in Jakarta. Email, LinkedIn, or GitHub. Open to interesting work and collaborations."
 				path="/contact"
+				schema={{
+					"@context": "https://schema.org",
+					"@type": "ContactPage",
+					"@id": "https://akbarakma.com/contact#page",
+					url: "https://akbarakma.com/contact",
+					name: "Contact Akbar Danial Akma",
+					mainEntity: { "@id": "https://akbarakma.com/#person" },
+					isPartOf: { "@id": "https://akbarakma.com/#website" },
+				}}
 			/>
 			<NavBar />
 

@@ -16,7 +16,7 @@ const Homepage = () => {
 		<div className="site-shell">
 			<Seo
 				title="Akbar Danial Akma | Senior Software Engineer"
-				description="Senior Software Engineer in Jakarta with 5+ years building logistics systems at scale, marketplace integrations, mobile apps, and AI tools. TypeScript, Go, Python, Node.js, React."
+				description="Senior Software Engineer at Juxta Labs in Jakarta, 6+ years building document AI, logistics systems at scale, marketplace integrations, mobile apps, and self-hosted tools. TypeScript, Go, Python, Node.js, React."
 				path="/"
 			/>
 			<NavBar />
@@ -64,7 +64,7 @@ const Homepage = () => {
 					<div className="stat-strip">
 						{INFO.stats.map((stat) => (
 							<div className="stat" key={stat.label}>
-								<span className="stat-num">{stat.num ?? INFO.projects.length}</span>
+								<span className="stat-num">{stat.num}</span>
 								<span className="stat-label mono">{stat.label}</span>
 							</div>
 						))}

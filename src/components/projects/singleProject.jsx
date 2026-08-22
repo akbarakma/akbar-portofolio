@@ -1,10 +1,17 @@
 import React from "react";
 
+// Project titles carry their location in a trailing paren, e.g.
+// "Tannoi Mobile App (London, UK)". The projects page needs the bare name too.
+export const splitTitle = (title) => {
+	const parts = title.match(/^(.*?)\s*\(([^)]+)\)\s*$/);
+	return parts
+		? { name: parts[1], location: parts[2] }
+		: { name: title, location: "Jakarta, Indonesia" };
+};
+
 const SingleProject = ({ title, description, link, company, skills, index }) => {
 	const indexLabel = String(index || 1).padStart(2, "0");
-	const titleParts = title.match(/^(.*?)\s*\(([^)]+)\)\s*$/);
-	const cleanTitle = titleParts ? titleParts[1] : title;
-	const location = titleParts ? titleParts[2] : "Jakarta, Indonesia";
+	const { name: cleanTitle, location } = splitTitle(title);
 
 	const card = (
 		<article className="project-card">

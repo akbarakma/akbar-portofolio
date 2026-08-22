@@ -684,18 +684,11 @@ a.project-wrap:hover .project-cta .arrow {
 /* ============================================================
    Filter chips
    ============================================================ */
-.filter-bar {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 16px;
-	margin-bottom: 26px;
-}
-
 .filter-row {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 8px;
+	margin-bottom: 26px;
 }
 
 .filter-chip {
@@ -1345,12 +1338,6 @@ a.project-wrap:hover .project-cta .arrow {
 
 	.home-cta {
 		padding: 40px 0 64px;
-	}
-
-	.filter-bar {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 10px;
 	}
 
 	.exp-row {

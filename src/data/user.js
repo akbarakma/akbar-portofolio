@@ -15,13 +15,13 @@ const INFO = {
 	homepage: {
 		title: "Senior Software Engineer",
 		description:
-			"Hey, I'm Akbar. For five years I've built the unglamorous backend that keeps things moving: pickup routing that holds when a campaign day triples the traffic, marketplace syncs that can't drop an order, mobile apps shipped out of Jakarta, Singapore, and London. Mostly TypeScript, Go, and Python. Lately my spare cycles go to LLMs and AI agents, working out where they earn their keep and where they don't.",
+			"Hey, I'm Akbar. Six years of building the unglamorous backend that keeps things moving: pickup routing that holds when a campaign day triples the traffic, marketplace syncs that can't drop an order, mobile apps shipped out of Jakarta, Singapore, and London. Now I'm at Juxta Labs building document AI for Indonesian institutions that can't afford a wrong answer. Mostly TypeScript, Go, and Python, plus a growing share of my time spent working out where AI agents earn their keep and where they don't.",
 	},
 
 	about: {
 		title: "About Me and My Job Experience",
 		description:
-			"I'm Akbar, a Senior Software Engineer, five years in. I started on the backend and never really left, though I'll go to whichever layer the problem is actually hiding in. I've worked in three-person teams in London and in companies big enough that shipping meant convincing four other teams first. Both taught me things. Somewhere in there I built social apps, marketplace integrations, and a logistics system that clears a million requests on a bad day. What I care about hasn't shifted much: code the next person can pick up without calling me, and software that still works six months after launch. Right now I'm deep in AI agents, mostly working out where they genuinely help and where they are just expensive.",
+			"I'm Akbar, a Senior Software Engineer, six years in. I started on the backend and never really left, though I'll go to whichever layer the problem is actually hiding in. I've worked in three-person teams in London and in companies big enough that shipping meant convincing four other teams first. Both taught me things. Somewhere in there I built social apps, marketplace integrations, and a logistics system that clears a million requests on a bad day. What I care about hasn't shifted much: code the next person can pick up without calling me, and software that still works six months after launch. These days that means Juxta Labs, building document AI for hospitals and health regulators, the kind of user who notices straight away when a model is confidently wrong.",
 	},
 
 	publicSites: [
@@ -56,22 +56,31 @@ const INFO = {
 	],
 
 	stats: [
-		{ num: "5+", label: "years shipping" },
-		{ num: null, label: "projects built" },
-		{ num: "3", label: "countries" },
+		{ num: "6+", label: "years shipping" },
+		{ num: "10+", label: "projects built" },
+		{ num: "6+", label: "industries shipped in" },
 		{ num: "1M+", label: "requests / peak day" },
 	],
 
 	highlightProjects: [
 		"Markdown Viewer (Jakarta, Indonesia)",
+		"CucianSiap (Jakarta, Indonesia)",
 		"PromptLoom (Jakarta, Indonesia)",
-		"URL Shortener (Jakarta, Indonesia)",
 		"Pickup Request Service Sicepat (Jakarta, Indonesia)",
 		"Grow With Kg Website (Jakarta, Indonesia)",
 		"Tannoi Mobile App (London, UK)",
 	],
 
 	projects: [
+		{
+			title: "CucianSiap (Jakarta, Indonesia)",
+			description:
+				"A laundry app for the small shops still running on a notebook and a calculator. Take the order on a phone, send the receipt over WhatsApp, get paid with QRIS, and hand the customer a link to watch their own wash. Next.js and FastAPI, free up to fifty orders a month.",
+			link: "https://www.cuciansiap.id",
+			company: "Zenvora",
+			skills: ['TypeScript', 'Next.js', 'Python', 'FastAPI', 'PostgreSQL'],
+		},
+
 		{
 			title: "PromptLoom (Jakarta, Indonesia)",
 			description:
@@ -106,13 +115,22 @@ const INFO = {
 		},
 
 		{
+			title: "Akbar Akma Personal Website (Jakarta, Indonesia)",
+			description:
+				"This site. React, no framework and no CMS, so anyone curious can see the work without wading through a resume. Rebuilt it on a light theme once the dark one stopped feeling like me.",
+			link: "https://akbarakma.com",
+			company: "Personal Project",
+			skills: ['TypeScript', 'React.js', 'HTML', 'CSS'],
+		},
+
+		{
 			title: "Pickup Request Service Sicepat (Jakarta, Indonesia)",
 			description:
 				"A request-routing service written in TypeScript and PostgreSQL. On campaign days, it fans out thousands to millions of pickup requests while keeping data in sync across services through Kafka.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
 			linkText: "View Project",
 			link: "https://www.sicepat.com",
-			company: "Sicepat Ekspres Indonesia",
+			company: "Sicepat Ekspres",
 			skills: ['TypeScript', 'AWS', 'Javascript', 'Snowflake', 'Kafka', 'Joblst', 'PostgreSQL', 'MariaDB'],
 		},
 
@@ -123,7 +141,7 @@ const INFO = {
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
 			linkText: "View Project",
 			link: "https://www.sicepat.com",
-			company: "Sicepat Ekspres Indonesia",
+			company: "Sicepat Ekspres",
 			skills: ['Golang', 'MongoDB', 'Kafka', 'Snowflake'],
 		},
 
@@ -134,7 +152,7 @@ const INFO = {
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
 			linkText: "View Project",
 			link: "https://www.sicepat.com",
-			company: "Sicepat Ekspres Indonesia",
+			company: "Sicepat Ekspres",
 			skills: ['PHP', 'HTML', 'CSS', 'Kafka', 'Ajax', 'PostgreSQL', 'Snowflake'],
 		},
 
@@ -167,7 +185,7 @@ const INFO = {
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
 			linkText: "View Project",
 			link: null,
-			company: "Valhalla Technologies",
+			company: "Valhalla",
 			skills: ['TypeScript', 'React Native', 'Google Cloud Platform (GCP)', 'Node.js', 'React.js', 'PostgreSQL'],
 		},
 
@@ -178,7 +196,7 @@ const INFO = {
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
 			linkText: "View Project",
 			link: null,
-			company: "Valhalla Technologies",
+			company: "Valhalla",
 			skills: ['TypeScript', 'React Native', 'Google Cloud Platform (GCP)', 'Node.js', 'React.js', 'PostgreSQL'],
 		},
 
@@ -189,7 +207,7 @@ const INFO = {
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
 			link: null,
-			company: "Valhalla Technologies",
+			company: "Valhalla",
 			skills: ['TypeScript', 'React Native', 'Google Cloud Platform (GCP)', 'Node.js', 'React.js', 'PostgreSQL'],
 		},
 
@@ -200,12 +218,23 @@ const INFO = {
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
 			linkText: "View Project",
 			link: null,
-			company: "PT. Prima Indo Medilab",
+			company: "Medilab",
 			skills: ['TypeScript', 'Node.js', 'React.js', 'PostgreSQL', 'HTML', 'CSS'],
 		},
 	],
 
 	jobExperience: [
+		{
+			title: "Juxta Labs",
+			description:
+				"Document AI for institutions that can't afford a wrong answer. A monitoring console for a live claim-coding pipeline, a finance and HR ERP shaped to match what hospitals have already run for a decade, and a hardened browser for regulated desktops. Most of the work is making a model's output into something a person will put their name on.",
+			logo: "juxtalabs_logo.jpeg",
+			linkText: "View Project",
+			link: "https://www.juxtalabs.io",
+			years: '2026 - Current',
+			role: 'Senior Software Engineer'
+		},
+
 		{
 			title: "Sicepat Ekspres Indonesia",
 			description:

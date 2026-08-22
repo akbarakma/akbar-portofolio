@@ -11,9 +11,18 @@ const About = () => {
 		<div className="site-shell">
 			<Seo
 				title="About | Akbar Danial Akma"
-				description="Akbar Danial Akma is a Senior Software Engineer in Jakarta. Five years across backend and frontend at Sicepat Ekspres, Hubbed, Gramedia, and Valhalla Technologies, working in TypeScript, Go, Python, Node.js, and React."
+				description="Akbar Danial Akma is a Senior Software Engineer at Juxta Labs in Jakarta. Six years across backend and frontend, including Sicepat Ekspres, Hubbed, Gramedia, and Valhalla Technologies, working in TypeScript, Go, Python, Node.js, and React."
 				path="/about"
 				image="/about.jpg"
+				schema={{
+					"@context": "https://schema.org",
+					"@type": "AboutPage",
+					"@id": "https://akbarakma.com/about#page",
+					url: "https://akbarakma.com/about",
+					name: "About Akbar Danial Akma",
+					mainEntity: { "@id": "https://akbarakma.com/#person" },
+					isPartOf: { "@id": "https://akbarakma.com/#website" },
+				}}
 			/>
 			<NavBar />
 
@@ -59,8 +68,8 @@ const About = () => {
 							<div className="fact">
 								<span className="fact-label mono">Currently</span>
 								<span>
-									Senior Software Engineer at Sicepat Ekspres, keeping the logistics
-									systems standing on the days that matter.
+									Senior Software Engineer at Juxta Labs, building document AI for
+									hospitals and health regulators that can't afford a wrong answer.
 								</span>
 							</div>
 							<div className="fact">
