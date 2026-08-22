@@ -1138,6 +1138,7 @@ a.project-wrap:hover .project-cta .arrow {
 	.hero-portrait {
 		order: -1;
 		max-width: 260px;
+		justify-self: center;
 	}
 
 	.hero-portrait img {
